@@ -1,3 +1,8 @@
 ./__pycache__
 .env
 llama_index
+fhir_resources
+storage
+llama_index
+build
+*.egg-info
