@@ -1,0 +1,25 @@
+source_table,source_column,target_table,target_column
+Pharmacy Claims,Z_PATID,None,None
+Pharmacy Claims,Z_CLMID,DRUG_EXPOSURE,drug_exposure_id
+Pharmacy Claims,YR,DRUG_EXPOSURE,year_of_drug_exposure
+Pharmacy Claims,MNTH,DRUG_EXPOSURE,month_of_drug_exposure
+Pharmacy Claims,YRMNTH_PD,DRUG_EXPOSURE,None
+Pharmacy Claims,FILL_DT,DRUG_EXPOSURE,drug_exposure_start_date
+Pharmacy Claims,CHK_DT,COST,paid_date
+Pharmacy Claims,AMT_NET_PAID,COST,paid_amount
+Pharmacy Claims,COPAY,COST,copayment_amount
+Pharmacy Claims,COINS,COST,coinsurance_amount
+Pharmacy Claims,DEDUCT,COST,deductible_amount
+Pharmacy Claims,CALC_ALLWD,COST,allowed_amount
+Pharmacy Claims,TOT_MEM_CS,COST,total_member_cost_share
+Pharmacy Claims,DISPFEE,COST,dispensing_fee
+Pharmacy Claims,QUANTITY,DRUG_EXPOSURE,quantity
+Pharmacy Claims,HNPI,PROVIDER,provider_npi
+Pharmacy Claims,DAW,DRUG_EXPOSURE,dispense_as_written
+Pharmacy Claims,DAYS_SUP,DRUG_EXPOSURE,days_supply
+Pharmacy Claims,SCRIPTS,DRUG_EXPOSURE,None
+Pharmacy Claims,NDC,DRUG_EXPOSURE,drug_concept_id
+Pharmacy Claims,SPCLT_IND,None,None
+Pharmacy Claims,HCCI_HL_CAT,None,None
+Pharmacy Claims,HCCI_DET_CAT,None,None
+Pharmacy Claims,OVER65_FLAG,None,None
