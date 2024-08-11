@@ -11,3 +11,4 @@ fuzzywuzzy
 scikit-learn
 # llama-index-embeddings-openai
 # llama-index-embeddings-ollama
+sentence-transformers
