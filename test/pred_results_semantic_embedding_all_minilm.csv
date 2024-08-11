@@ -1,0 +1,504 @@
+source_table,source_column,target_table_true,target_column_true,target_table_pred,target_column_pred,confidence_score,match_type,reliability_score
+transfers,subject id,visit detail,person id,cohort,subject id,0.38149928663724375,Type2,3
+transfers,prev wardid,none,none,visit detail,discharge to concept id,0.2886880567484137,Type5,1
+transfers,prev careunit,visit detail,admitted from concept id,care site,care site id,0.34820634446645493,Type2,3
+transfers,outtime,visit detail,visit detail end datetime,note,note datetime,0.2677123781360943,Type2,3
+transfers,los,none,none,location,longitude,0.25000170227132856,Type5,1
+transfers,intime,visit detail,visit detail start datetime,note,note datetime,0.28692469117918407,Type2,3
+transfers,icustay id,visit detail,visit detail id,cost,cost id,0.32606588601319564,Type2,3
+transfers,hadm id,visit detail,visit occurrence id,note,provider id,0.32816415239744506,Type2,3
+transfers,eventtype,visit detail,visit detail source value,observation,obs event field concept id,0.3460888683786162,Type2,3
+transfers,dbsource,none,none,visit detail,discharge to source value,0.24052654052522504,Type5,1
+transfers,curr wardid,none,none,visit detail,discharge to source value,0.2655486404656219,Type5,1
+transfers,curr careunit,visit detail,discharge to source value,visit detail,care site id,0.32696711040071325,Type2,3
+services,transfertime,visit detail,visit detail start datetime,visit detail,visit detail start datetime,0.34978919200421554,Type1,5
+services,subject id,visit detail,person id,care site,place of service concept id,0.5936680045609594,Type2,3
+services,prev service,visit detail,admitted from concept id,care site,place of service concept id,0.4911076088509962,Type2,3
+services,hadm id,visit detail,visit occurrence id,note,provider id,0.5572746902450846,Type2,3
+services,curr service,visit detail,discharge to source value,care site,place of service concept id,0.5070397236355254,Type2,3
+procedures icd,subject id,procedure occurrence,person id,procedure occurrence,person id,0.5393584755463711,Type1,5
+procedures icd,seq num,procedure occurrence,quantity,procedure occurrence,modifier concept id,0.4852217561454278,Type2,3
+procedures icd,icd9 code,procedure occurrence,procedure source value,procedure occurrence,procedure concept id,0.47605559597272984,Type2,3
+procedures icd,hadm id,procedure occurrence,visit occurrence id,procedure occurrence,provider id,0.5126814921095104,Type2,3
+procedureevents mv,valueuom,none,none,procedure occurrence,procedure source value,0.6161535509535666,Type5,1
+procedureevents mv,value,procedure occurrence,procedure source value,procedure occurrence,procedure source value,0.6175133582328918,Type1,5
+procedureevents mv,subject id,procedure occurrence,person id,procedure occurrence,person id,0.6185836013224273,Type1,5
+procedureevents mv,storetime,none,none,procedure occurrence,procedure datetime,0.6349011640730569,Type5,1
+procedureevents mv,statusdescription,none,none,procedure occurrence,procedure concept id,0.5682668935458906,Type5,1
+procedureevents mv,starttime,procedure occurrence,procedure datetime,procedure occurrence,procedure datetime,0.6326421631475625,Type1,5
+procedureevents mv,secondaryordercategoryname,none,none,procedure occurrence,modifier concept id,0.5694759413242638,Type5,1
+procedureevents mv,orderid,none,none,procedure occurrence,procedure concept id,0.578192397456837,Type5,1
+procedureevents mv,ordercategoryname,procedure occurrence,modifier source value,procedure occurrence,modifier concept id,0.5676944134007151,Type2,3
+procedureevents mv,ordercategorydescription,none,none,procedure occurrence,modifier concept id,0.5692786240189822,Type5,1
+procedureevents mv,locationcategory,none,none,procedure occurrence,procedure source concept id,0.5500898981139823,Type5,1
+procedureevents mv,location,none,none,procedure occurrence,procedure source value,0.5814809306106481,Type5,1
+procedureevents mv,linkorderid,none,none,procedure occurrence,procedure source value,0.5781946960575209,Type5,1
+procedureevents mv,itemid,procedure occurrence,procedure concept id,procedure occurrence,procedure concept id,0.5870745986703831,Type1,5
+procedureevents mv,isopenbag,none,none,procedure occurrence,quantity,0.5451691771473365,Type5,1
+procedureevents mv,icustay id,procedure occurrence,visit detail id,procedure occurrence,person id,0.6223969276316493,Type2,3
+procedureevents mv,hadm id,procedure occurrence,visit occurrence id,procedure occurrence,provider id,0.6088560950746293,Type2,3
+procedureevents mv,endtime,none,none,procedure occurrence,procedure datetime,0.6008894718702125,Type5,1
+procedureevents mv,continueinnextdept,none,none,procedure occurrence,procedure source value,0.5548024603345161,Type5,1
+procedureevents mv,comments editedby,none,none,procedure occurrence,modifier source value,0.533386831979765,Type5,1
+procedureevents mv,comments date,none,none,procedure occurrence,procedure date,0.634469796034242,Type5,1
+procedureevents mv,comments canceledby,none,none,procedure occurrence,procedure concept id,0.5061654683060696,Type5,1
+procedureevents mv,cgid,procedure occurrence,provider id,procedure occurrence,procedure source concept id,0.5371555001300257,Type2,3
+procedureevents mv,cancelreason,none,none,procedure occurrence,procedure source value,0.5342382758936988,Type5,1
+prescriptions,subject id,drug exposure,person id,drug exposure,person id,0.3761993321249687,Type1,5
+prescriptions,startdate,drug exposure,drug exposure start datetime,drug strength,valid start date,0.5739741537125369,Type2,3
+prescriptions,route,drug exposure,route source value,drug exposure,route source value,0.47669673164139525,Type1,5
+prescriptions,prod strength,none,none,drug strength,denominator value,0.5134690633557282,Type5,1
+prescriptions,ndc,none,none,drug exposure,provider id,0.4308307240055931,Type5,1
+prescriptions,icustay id,drug exposure,visit detail id,drug exposure,provider id,0.4755745122577751,Type2,3
+prescriptions,hadm id,drug exposure,visit occurrence id,drug exposure,provider id,0.4867566978724152,Type2,3
+prescriptions,gsn,none,none,drug exposure,provider id,0.3972846156314404,Type5,1
+prescriptions,formulary drug cd,none,none,dose era,drug concept id,0.4422549753853598,Type5,1
+prescriptions,form val disp,none,none,dose era,drug concept id,0.38584520455451843,Type5,1
+prescriptions,form unit disp,none,none,dose era,drug concept id,0.4358202541640298,Type5,1
+prescriptions,enddate,drug exposure,drug exposure end datetime,drug strength,valid end date,0.5537219632178088,Type2,3
+prescriptions,drug type,drug exposure,drug type concept id,drug exposure,drug type concept id,0.4858269286696907,Type1,5
+prescriptions,drug name poe,none,none,drug era,drug concept id,0.4468164196463684,Type5,1
+prescriptions,drug name generic,none,none,dose era,drug concept id,0.4881148060108543,Type5,1
+prescriptions,drug,drug exposure,drug source value,drug era,drug era id,0.49765191403230696,Type2,3
+prescriptions,dose val rx,drug exposure,quantity,dose era,dose value,0.4372714535143883,Type2,3
+prescriptions,dose unit rx,drug exposure,dose unit source value,drug exposure,dose unit source value,0.4856718128936912,Type1,5
+pharmacy claims,z patid,none,none,drug exposure,provider id,0.40127218475735166,Type5,1
+pharmacy claims,z clmid,drug exposure,drug exposure id,drug exposure,provider id,0.3648659784805047,Type2,3
+pharmacy claims,yrmnth pd,drug exposure,none,dose era,drug concept id,0.3880360685029295,Type5,1
+pharmacy claims,yr,drug exposure,year of drug exposure,drug exposure,provider id,0.3893554299378631,Type2,3
+pharmacy claims,tot mem cs,cost,total member cost share,dose era,drug concept id,0.348636748486322,Type2,3
+pharmacy claims,spclt ind,none,none,drug exposure,provider id,0.3590865516235193,Type5,1
+pharmacy claims,scripts,drug exposure,none,drug exposure,provider id,0.3755747554733487,Type5,1
+pharmacy claims,quantity,drug exposure,quantity,drug exposure,quantity,0.36482236856292083,Type1,5
+pharmacy claims,over65 flag,none,none,drug exposure,provider id,0.3691852117863156,Type5,1
+pharmacy claims,ndc,drug exposure,drug concept id,drug exposure,provider id,0.4132869889449056,Type2,3
+pharmacy claims,mnth,drug exposure,month of drug exposure,drug exposure,provider id,0.3920114940316761,Type2,3
+pharmacy claims,hnpi,provider,provider npi,drug exposure,provider id,0.39397768041360465,Type2,3
+pharmacy claims,hcci hl cat,none,none,drug exposure,provider id,0.338675653189361,Type5,1
+pharmacy claims,hcci det cat,none,none,drug exposure,provider id,0.3535366497961039,Type5,1
+pharmacy claims,fill dt,drug exposure,drug exposure start date,drug exposure,provider id,0.3836861728395657,Type2,3
+pharmacy claims,dispfee,cost,dispensing fee,drug exposure,provider id,0.40299104047052625,Type2,3
+pharmacy claims,deduct,cost,deductible amount,drug exposure,provider id,0.37160631943458305,Type2,3
+pharmacy claims,days sup,drug exposure,days supply,drug exposure,days supply,0.42296356235556587,Type1,5
+pharmacy claims,daw,drug exposure,dispense as written,drug exposure,provider id,0.3732029023122596,Type2,3
+pharmacy claims,copay,cost,copayment amount,drug exposure,provider id,0.3791585246038681,Type2,3
+pharmacy claims,coins,cost,coinsurance amount,drug exposure,refills,0.3668517953042636,Type2,3
+pharmacy claims,chk dt,cost,paid date,drug exposure,provider id,0.3914957459312508,Type2,3
+pharmacy claims,calc allwd,cost,allowed amount,dose era,drug concept id,0.36574635884666246,Type2,3
+pharmacy claims,amt net paid,cost,paid amount,drug exposure,provider id,0.3505468275522331,Type2,3
+patients,subject id,person,person id,cohort,subject id,0.5283790659901639,Type2,3
+patients,gender,person,gender source value,provider,gender concept id,0.47472298322349116,Type2,3
+patients,expire flag,none,none,person,death datetime,0.3891740885897024,Type5,1
+patients,dod ssn,none,none,provider,care site id,0.3775383372773303,Type5,1
+patients,dod hosp,none,none,specimen,disease status concept id,0.3593764100939493,Type5,1
+patients,dod,person,death datetime,visit detail,care site id,0.3922147532860816,Type2,3
+patients,dob,person,birth datetime,specimen,disease status concept id,0.3653603748850483,Type2,3
+outputevents,valueuom,measurement,unit source value,procedure occurrence,procedure source value,0.38041873330765924,Type2,3
+outputevents,value,measurement,value as number,procedure occurrence,procedure source value,0.37499157443452974,Type2,3
+outputevents,subject id,measurement,person id,observation,observation event id,0.44130336627325845,Type2,3
+outputevents,storetime,none,none,procedure occurrence,procedure datetime,0.3826029338093175,Type5,1
+outputevents,stopped,none,none,observation,observation event id,0.30406964661906766,Type5,1
+outputevents,newbottle,none,none,note,note event field concept id,0.33850339036961674,Type5,1
+outputevents,itemid,measurement,measurement concept id,note,note event field concept id,0.40187358897476866,Type2,3
+outputevents,iserror,none,none,note,note event id,0.32009879197604724,Type5,1
+outputevents,icustay id,measurement,visit detail id,observation,observation event id,0.44976115352506457,Type2,3
+outputevents,hadm id,measurement,visit occurrence id,observation,observation event id,0.40732816549881873,Type2,3
+outputevents,charttime,measurement,measurement datetime,measurement,measurement datetime,0.27506765942853584,Type1,5
+outputevents,cgid,measurement,provider id,note,note event id,0.33896616545631975,Type2,3
+outpatient visit claims,z visitid,visit occurrence,visit occurrence id,visit detail,provider id,0.4984675182150386,Type2,3
+outpatient visit claims,z patid,none,none,visit occurrence,provider id,0.4511401195691249,Type5,1
+outpatient visit claims,z clmid,visit occurrence,visit occurrence id,visit detail,admitted from source value,0.4094973654818669,Type2,3
+outpatient visit claims,yr,visit occurrence,year of visit,visit detail,admitted from source value,0.4588970400659872,Type2,3
+outpatient visit claims,units,procedure occurrence,quantity,visit detail,admitted from source value,0.45555740843139003,Type2,3
+outpatient visit claims,tot mem cs,cost,total member cost share,visit detail,admitted from source value,0.42989772588889,Type2,3
+outpatient visit claims,tob,none,none,visit detail,admitted from source value,0.45184723410477434,Type5,1
+outpatient visit claims,rvnu cd,none,none,visit detail,discharge to source value,0.39564682209261065,Type5,1
+outpatient visit claims,provcat,provider,provider specialty concept id,visit occurrence,provider id,0.43850305330165484,Type2,3
+outpatient visit claims,prov zip 5 cd,provider,provider zip code,location,zip,0.4234990396948371,Type2,3
+outpatient visit claims,prov state,provider,provider state,visit detail,admitted from source value,0.44305350992033493,Type2,3
+outpatient visit claims,prov cbsa cd,none,none,visit detail,admitted from source value,0.42180174083075395,Type5,1
+outpatient visit claims,procmod,procedure occurrence,modifier concept id,visit occurrence,discharge to concept id,0.4393967201454846,Type2,3
+outpatient visit claims,proc3,procedure occurrence,procedure concept id,visit detail,admitted from source value,0.43342166721224107,Type2,3
+outpatient visit claims,proc2,procedure occurrence,procedure concept id,visit detail,admitted from source value,0.43311709265330445,Type2,3
+outpatient visit claims,proc1,procedure occurrence,procedure concept id,visit occurrence,discharge to concept id,0.4297683245927166,Type2,3
+outpatient visit claims,proc cd,procedure occurrence,procedure concept id,visit occurrence,discharge to concept id,0.42507626803484677,Type2,3
+outpatient visit claims,primary cov ind,none,none,visit detail,admitted from source value,0.43866192362927103,Type5,1
+outpatient visit claims,pos,visit occurrence,place of service concept id,visit detail,admitted from source value,0.4304520224857018,Type2,3
+outpatient visit claims,poa1-10,condition occurrence,present on admission concept id,visit detail,admitted from source value,0.46127088045949843,Type2,3
+outpatient visit claims,paid dt,cost,paid date,visit detail,admitted from source value,0.4516536508824944,Type2,3
+outpatient visit claims,over65 flag,none,none,visit occurrence,discharge to concept id,0.4051369792647475,Type5,1
+outpatient visit claims,ntwrk ind,none,none,visit detail,admitted from source value,0.4373413056766663,Type5,1
+outpatient visit claims,mnth,visit occurrence,month of visit,visit detail,admitted from source value,0.4403968929260729,Type2,3
+outpatient visit claims,lst dt,visit occurrence,visit end date,visit detail,admitted from source value,0.4486581759734087,Type2,3
+outpatient visit claims,icd10 pcs1-10,procedure occurrence,procedure source value,visit detail,admitted from concept id,0.424850719467717,Type2,3
+outpatient visit claims,icd10 cm1-10,condition occurrence,condition source value,visit detail,admitted from concept id,0.4389020413431001,Type2,3
+outpatient visit claims,hnpi be,provider,billing provider npi,visit detail,provider id,0.4296109590775775,Type2,3
+outpatient visit claims,hnpi,provider,provider npi,visit detail,provider id,0.4295779226603341,Type2,3
+outpatient visit claims,hcci hl cat,none,none,drug exposure,visit occurrence id,0.3925639036840257,Type5,1
+outpatient visit claims,hcci det cat,none,none,visit detail,admitted from source value,0.42260270489593943,Type5,1
+outpatient visit claims,fst dt,visit occurrence,visit start date,visit detail,admitted from source value,0.46015158384060173,Type2,3
+outpatient visit claims,dstatus,visit occurrence,discharge to concept id,visit occurrence,discharge to concept id,0.4179403274503222,Type1,5
+outpatient visit claims,drg,condition occurrence,drg concept id,cost,drg concept id,0.431534708448318,Type2,3
+outpatient visit claims,diag3,condition occurrence,condition concept id,provider,dea,0.4112154026117302,Type2,3
+outpatient visit claims,diag2,condition occurrence,condition concept id,drug exposure,visit occurrence id,0.4091854976417237,Type2,3
+outpatient visit claims,diag1,condition occurrence,condition concept id,visit occurrence,discharge to concept id,0.42589164113692024,Type2,3
+outpatient visit claims,deduct,cost,deductible amount,visit occurrence,admitted from source value,0.43306968680807756,Type2,3
+outpatient visit claims,copay,cost,copayment amount,visit detail,admitted from source value,0.42582421782596835,Type2,3
+outpatient visit claims,coins,cost,coinsurance amount,visit detail,admitted from source value,0.430802823694013,Type2,3
+outpatient visit claims,clmseq,visit occurrence,none,visit detail,admitted from source value,0.43014320459799954,Type5,1
+outpatient visit claims,clm fst dt,visit occurrence,none,visit detail,admitted from source value,0.4632805613794074,Type5,1
+outpatient visit claims,clm frm typ,none,none,visit detail,admitted from source value,0.4590579808441982,Type5,1
+outpatient visit claims,calc allwd,cost,allowed amount,visit detail,admitted from source value,0.45697487961823335,Type2,3
+outpatient visit claims,amt net paid,cost,paid amount,visit detail,admitted from source value,0.41899249273315364,Type2,3
+noteevents,text,note,note text,note,note text,0.5618765575426039,Type1,5
+noteevents,subject id,note,person id,note,note event id,0.6488766959316384,Type2,3
+noteevents,storetime,none,none,note,note datetime,0.5914091993593468,Type5,1
+noteevents,iserror,none,none,note,note event id,0.5575328784664084,Type5,1
+noteevents,hadm id,note,visit occurrence id,note,note event id,0.6184669146611583,Type2,3
+noteevents,description,note,note title,note,note event id,0.6081490516268802,Type2,3
+noteevents,charttime,note,note datetime,note,note datetime,0.5539727653566906,Type1,5
+noteevents,chartdate,note,note date,note,note date,0.5284629858072083,Type1,5
+noteevents,cgid,note,provider id,note,note event id,0.5825134882095242,Type2,3
+noteevents,category,note,note source value,note,note event id,0.5925622032006812,Type2,3
+microbiologyeven,subject id,specimen,person id,cohort,subject id,0.4361974924663779,Type2,3
+microbiologyeven,spec type desc,specimen,specimen source value,specimen,specimen type concept id,0.3893656327504843,Type2,3
+microbiologyeven,spec itemid,specimen,specimen type concept id,specimen,unit concept id,0.4447306219983405,Type2,3
+microbiologyeven,org name,specimen,specimen source value,care site,care site name,0.3809387562231454,Type2,3
+microbiologyeven,org itemid,specimen,specimen source id,specimen,specimen source id,0.37587836768355193,Type1,5
+microbiologyeven,isolate num,specimen,quantity,specimen,disease status source value,0.39565394683159755,Type2,3
+microbiologyeven,interpretation,none,none,specimen,disease status source value,0.3784550955977203,Type5,1
+microbiologyeven,hadm id,none,none,specimen,disease status concept id,0.4233739111348961,Type5,1
+microbiologyeven,dilution value,none,none,specimen,unit source value,0.43186580985948275,Type5,1
+microbiologyeven,dilution text,none,none,specimen,quantity,0.42014347148213604,Type5,1
+microbiologyeven,dilution comparison,none,none,specimen,quantity,0.39897488221336436,Type5,1
+microbiologyeven,charttime,specimen,specimen datetime,specimen,specimen datetime,0.4278422356124005,Type1,5
+microbiologyeven,chartdate,specimen,specimen date,specimen,specimen date,0.43090078858842745,Type1,5
+microbiologyeven,ab name,none,none,specimen,disease status concept id,0.3969970569802086,Type5,1
+microbiologyeven,ab itemid,none,none,specimen,disease status concept id,0.429111799388211,Type5,1
+member,vision,payer plan period,plan source value,observation,person id,0.44706665044075466,Type2,3
+member,unique member idc,person,person source value,person,person id,0.4564621893336385,Type2,3
+member,unique member id,person,person source value,person,person id,0.5109105617865208,Type2,3
+member,subscriber member idc,person,person source value,observation,provider id,0.4317388869985945,Type2,3
+member,subscriber member id,person,person source value,person,person id,0.5027469571259595,Type2,3
+member,subgroup number biz,payer plan period,plan source value,cohort,cohort definition id,0.3435931957238919,Type2,3
+member,sa,payer plan period,plan source value,note,person id,0.4027014466065371,Type2,3
+member,row source from,none,none,observation,unit source value,0.4466392665693728,Type5,1
+member,rlnshp to subscriber code,none,none,person,provider id,0.34872160543872,Type5,1
+member,primary product code,payer plan period,payer source value,cost,revenue code concept id,0.46095260038035624,Type2,3
+member,ppo,payer plan period,plan source value,note,person id,0.40963100277088765,Type2,3
+member,pos,payer plan period,plan source value,person,person id,0.36996446162861796,Type2,3
+member,policy member idc,person,person source value,visit detail,admitted from concept id,0.4319068869982755,Type2,3
+member,policy member id,person,person source value,person,provider id,0.49806331936395876,Type2,3
+member,pharmacy,payer plan period,plan source value,drug era,person id,0.48103985191511406,Type2,3
+member,offering feature code,payer plan period,plan source value,concept,concept code,0.4717001601265785,Type2,3
+member,mh,payer plan period,plan source value,note,person id,0.39955761511154847,Type2,3
+member,member zip,location,zip,location,zip,0.48346986241111534,Type1,5
+member,member state,location,state,location,state,0.43399099612779846,Type1,5
+member,member gender,person,gender concept id,person,gender concept id,0.452375387388532,Type1,5
+member,member date of birth,person,birth datetime,person,birth datetime,0.5490483423274215,Type1,5
+member,member city,location,city,location,city,0.469391797251597,Type1,5
+member,mbr loc cnty nm,location,county,cdm source,cdm holder,0.39027221715079163,Type2,3
+member,mbr loc cnty cd,location,county,cdm source,cdm holder,0.4674255036955926,Type2,3
+member,marital status code,none,none,condition era,person id,0.4679764330899253,Type5,1
+member,hmo,payer plan period,plan source value,person,person id,0.42196595334816883,Type2,3
+member,epo,payer plan period,plan source value,dose era,person id,0.41320342044765085,Type2,3
+member,enrl thru dt,payer plan period,payer plan period end date,provider,dea,0.401667605101491,Type2,3
+member,enrl from dt,payer plan period,payer plan period start date,dose era,unit concept id,0.39814264233749175,Type2,3
+member,dental,payer plan period,plan source value,specimen,person id,0.42087075690125075,Type2,3
+member,date enrl thru,payer plan period,payer plan period end date,cost,paid date,0.4473664968932303,Type2,3
+member,date enrl from,payer plan period,payer plan period start date,note,note date,0.4703937461037977,Type2,3
+member,cvr mnth dt,payer plan period,payer plan period start date,visit detail,discharge to source value,0.4185484473370651,Type2,3
+member,cust type desc,payer plan period,payer source value,note,note type concept id,0.40322384923996457,Type2,3
+member,coverage level code,payer plan period,plan source value,concept,concept code,0.42602616785448116,Type2,3
+member,cmm,payer plan period,plan source value,cdm source,cdm holder,0.45394789520323453,Type2,3
+member,c xtrct dt,none,none,observation,unit source value,0.37966285388243687,Type5,1
+member,c subscriber ssn,person,person source value,person,provider id,0.39853935399350066,Type2,3
+member,c member ssn,person,person source value,person,provider id,0.4063368361321422,Type2,3
+member,c member age 2017,none,none,person,year of birth,0.4138660124607332,Type5,1
+member,c dob,person,birth datetime,note,person id,0.36372173402750857,Type2,3
+member,c cvr mnth,payer plan period,payer plan period start date,cdm source,cdm holder,0.3982087163394813,Type2,3
+member,benefit series id,payer plan period,plan source value,payer plan period,sponsor concept id,0.4618903359715648,Type2,3
+member,benefit package rank numberc,payer plan period,plan source value,visit detail,admitted from source value,0.4134541372585421,Type2,3
+member,benefit package rank number,payer plan period,plan source value,visit detail,admitted from source value,0.4052697756428457,Type2,3
+member,benefit package id,payer plan period,plan source value,note,provider id,0.5045646338263173,Type2,3
+labevents,valueuom,measurement,unit concept id,specimen,specimen source value,0.446038159459013,Type2,3
+labevents,valuenum,measurement,value as number,measurement,value as number,0.40531054295591684,Type1,5
+labevents,value,measurement,value as string,specimen,specimen source value,0.4326874663569966,Type2,3
+labevents,subject id,measurement,person id,cohort,subject id,0.4644040307036772,Type2,3
+labevents,itemid,measurement,measurement concept id,cost,cost event id,0.4342044956719867,Type2,3
+labevents,hadm id,measurement,visit occurrence id,note,provider id,0.40872754878483114,Type2,3
+labevents,flag,0,0,observation,observation event id,0.34849709663904427,Type2,3
+labevents,charttime,measurement,measurement datetime,measurement,measurement datetime,0.4038913356690744,Type1,5
+inputevents cv,subject id,drug exposure,person id,observation,obs event field concept id,0.37616135056638733,Type2,3
+inputevents cv,storetime,none,none,condition era,condition era start datetime,0.3238594432710664,Type5,1
+inputevents cv,stopped,drug exposure,stop reason,observation,obs event field concept id,0.27360807505552026,Type2,3
+inputevents cv,rateuom,none,none,observation,obs event field concept id,0.2989267711843372,Type5,1
+inputevents cv,rate,none,none,cost,cost event field concept id,0.29505288990778666,Type5,1
+inputevents cv,originalsite,none,none,note,note event field concept id,0.31196880792992654,Type5,1
+inputevents cv,originalroute,none,none,visit occurrence,admitted from source value,0.29697592851427645,Type5,1
+inputevents cv,originalrateuom,none,none,observation,obs event field concept id,0.3085954581775181,Type5,1
+inputevents cv,originalrate,none,none,procedure occurrence,modifier source value,0.30218131434682827,Type5,1
+inputevents cv,originalamountuom,none,none,observation,obs event field concept id,0.34186844703931374,Type5,1
+inputevents cv,originalamount,none,none,observation,obs event field concept id,0.3316515446808721,Type5,1
+inputevents cv,orderid,none,none,observation,observation event id,0.3369315507436685,Type5,1
+inputevents cv,newbottle,drug exposure,refills,note,note event field concept id,0.32834703904364754,Type2,3
+inputevents cv,linkorderid,none,none,observation,obs event field concept id,0.31064363204615225,Type5,1
+inputevents cv,itemid,drug exposure,drug concept id,note,note event field concept id,0.360046860372386,Type2,3
+inputevents cv,icustay id,drug exposure,visit detail id,observation,obs event field concept id,0.39650653446489903,Type2,3
+inputevents cv,hadm id,drug exposure,visit occurrence id,observation,obs event field concept id,0.3485860998005567,Type2,3
+inputevents cv,charttime,drug exposure,drug exposure start date,note nlp,nlp datetime,0.2980685662023486,Type2,3
+inputevents cv,cgid,drug exposure,provider id,note,note event field concept id,0.30305194562506543,Type2,3
+inputevents cv,amountuom,drug exposure,dose unit source value,procedure occurrence,quantity,0.3483436941782073,Type2,3
+inputevents cv,amount,drug exposure,quantity,procedure occurrence,quantity,0.3367741985803039,Type2,3
+inpatient visit claims,z patid,none,none,visit occurrence,provider id,0.463093762229268,Type5,1
+inpatient visit claims,z clmid,visit occurrence,visit occurrence id,visit detail,admitted from source value,0.41624433618481926,Type2,3
+inpatient visit claims,z admit id,none,none,visit detail,admitted from concept id,0.5298673718061098,Type5,1
+inpatient visit claims,yr,visit occurrence,year of visit,visit detail,admitted from source value,0.47241176966164,Type2,3
+inpatient visit claims,units,procedure occurrence,quantity,visit detail,admitted from source value,0.4657127337083288,Type2,3
+inpatient visit claims,tot mem cs,cost,total member cost share,visit detail,admitted from source value,0.4302027163502128,Type2,3
+inpatient visit claims,tob,none,none,visit detail,admitted from source value,0.45996379005657884,Type5,1
+inpatient visit claims,rvnu cd,none,none,visit occurrence,discharge to source value,0.4050008625781699,Type5,1
+inpatient visit claims,provcat,provider,provider specialty concept id,visit occurrence,provider id,0.4550996748853628,Type2,3
+inpatient visit claims,prov zip 5 cd,provider,provider zip code,location,zip,0.43472412039380015,Type2,3
+inpatient visit claims,prov state,provider,provider state,visit detail,admitted from source value,0.4532240948116639,Type2,3
+inpatient visit claims,prov cbsa cd,none,none,visit detail,admitted from source value,0.42441622284445624,Type5,1
+inpatient visit claims,procmod,procedure occurrence,modifier concept id,visit occurrence,admitted from concept id,0.4469351046498911,Type2,3
+inpatient visit claims,proc3,procedure occurrence,procedure concept id,visit detail,admitted from source value,0.4306022136150952,Type2,3
+inpatient visit claims,proc2,procedure occurrence,procedure concept id,visit detail,admitted from source value,0.4327536433332725,Type2,3
+inpatient visit claims,proc1,procedure occurrence,procedure concept id,procedure occurrence,visit detail id,0.4325121029232466,Type2,3
+inpatient visit claims,proc cd,procedure occurrence,procedure concept id,visit occurrence,discharge to concept id,0.4317192728366597,Type2,3
+inpatient visit claims,primary cov ind,none,none,visit detail,admitted from source value,0.44756750952658597,Type5,1
+inpatient visit claims,pos,visit occurrence,place of service concept id,visit detail,admitted from source value,0.44154382866610165,Type2,3
+inpatient visit claims,poa1-10,condition occurrence,present on admission concept id,visit detail,admitted from source value,0.4676352209456374,Type2,3
+inpatient visit claims,paid dt,cost,paid date,visit detail,admitted from source value,0.46424668719565204,Type2,3
+inpatient visit claims,over65 flag,none,none,visit detail,visit detail id,0.41983711046642197,Type5,1
+inpatient visit claims,ntwrk ind,none,none,visit detail,admitted from source value,0.4479390043489364,Type5,1
+inpatient visit claims,mnth,visit occurrence,month of visit,visit detail,admitted from source value,0.45076387732037093,Type2,3
+inpatient visit claims,mdc,condition occurrence,condition source concept id,visit detail,admitted from source value,0.4619971685344204,Type2,3
+inpatient visit claims,lst dt,visit occurrence,visit end date,visit detail,admitted from source value,0.4587342458468412,Type2,3
+inpatient visit claims,last dischdt,visit occurrence,discharge date,visit occurrence,discharge to concept id,0.43267537368008124,Type2,3
+inpatient visit claims,icd10 cm1-10,condition occurrence,condition source value,drug exposure,visit detail id,0.4448368869567747,Type2,3
+inpatient visit claims,hnpi be,provider,billing provider npi,visit detail,provider id,0.4431373889588042,Type2,3
+inpatient visit claims,hnpi,provider,provider npi,visit detail,provider id,0.4411469728569213,Type2,3
+inpatient visit claims,hcci hl cat,none,none,drug exposure,visit occurrence id,0.40562745519056953,Type5,1
+inpatient visit claims,hcci det cat,none,none,visit detail,admitted from source value,0.42858940318302435,Type5,1
+inpatient visit claims,fst dt,visit occurrence,visit start date,visit detail,admitted from source value,0.4706983058064848,Type2,3
+inpatient visit claims,fst admtdt,visit occurrence,admission date,visit detail,admitted from source value,0.46515716571928,Type2,3
+inpatient visit claims,entity,none,none,visit detail,provider id,0.498544379304951,Type5,1
+inpatient visit claims,dstatus,visit occurrence,discharge to concept id,visit occurrence,discharge to concept id,0.34544853699011296,Type1,5
+inpatient visit claims,drg,condition occurrence,drg concept id,cost,drg concept id,0.44975404986941814,Type2,3
+inpatient visit claims,diag3,condition occurrence,condition concept id,drug exposure,visit occurrence id,0.4189947880095859,Type2,3
+inpatient visit claims,diag2,condition occurrence,condition concept id,drug exposure,visit occurrence id,0.4268724423503454,Type2,3
+inpatient visit claims,diag1,condition occurrence,condition concept id,visit occurrence,discharge to concept id,0.43216866930705944,Type2,3
+inpatient visit claims,deduct,cost,deductible amount,visit occurrence,admitted from source value,0.4433766049718719,Type2,3
+inpatient visit claims,copay,cost,copayment amount,visit detail,visit detail id,0.43784734141546044,Type2,3
+inpatient visit claims,coins,cost,coinsurance amount,visit detail,admitted from source value,0.4292707579578251,Type2,3
+inpatient visit claims,clmseq,visit occurrence,none,visit detail,admitted from source value,0.43872956288603,Type5,1
+inpatient visit claims,clm frm typ,none,none,visit detail,admitted from source value,0.4648947824395955,Type5,1
+inpatient visit claims,calc allwd,cost,allowed amount,visit detail,admitted from source value,0.4637072568081738,Type2,3
+inpatient visit claims,amt net paid,cost,paid amount,cost,payer plan period id,0.4318368122840893,Type2,3
+inpatient visit claims,admit type,visit occurrence,admission type concept id,visit detail,admitted from source value,0.49988765227703646,Type2,3
+inpatient visit claims,admit src,visit occurrence,admitting source concept id,visit detail,admitted from source value,0.5012735238292685,Type2,3
+icustays,subject id,visit detail,person id,cohort,subject id,0.45133603197025296,Type2,3
+icustays,outtime,visit detail,visit detail end datetime,note nlp,nlp datetime,0.34075815716956237,Type2,3
+icustays,los,none,none,location,latitude,0.29388612997240376,Type5,1
+icustays,last wardid,none,none,dose era,person id,0.34240814912021444,Type5,1
+icustays,last careunit,visit detail,discharge to source value,care site,care site name,0.3961952916817758,Type2,3
+icustays,intime,visit detail,visit detail start datetime,dose era,dose era start datetime,0.3562799554025619,Type2,3
+icustays,icustay id,visit detail,visit detail id,note,person id,0.3848042947087744,Type2,3
+icustays,hadm id,visit detail,visit occurrence id,note,person id,0.3905314580964272,Type2,3
+icustays,first wardid,none,none,dose era,person id,0.3668356851942245,Type5,1
+icustays,first careunit,visit detail,admitted from concept id,care site,care site name,0.41799307710512235,Type2,3
+icustays,dbsource,none,none,observation,observation source concept id,0.3498035829452464,Type5,1
+drgcodes,subject id,observation,person id,cost,drg concept id,0.3749661617309392,Type2,3
+drgcodes,hadm id,observation,visit occurrence id,cost,drg concept id,0.39079387031393864,Type2,3
+drgcodes,drg type,observation,unit source value,cost,drg concept id,0.37855289332093,Type2,3
+drgcodes,drg severity,none,none,cost,drg source value,0.3671825418189568,Type5,1
+drgcodes,drg mortality,none,none,cost,drg source value,0.3832761041829845,Type5,1
+drgcodes,drg code,observation,observation source value,cost,drg concept id,0.3851289500940457,Type2,3
+drgcodes,description,observation,value as string,cost,drg concept id,0.34626490683027955,Type2,3
+diagnoses icd,subject id,condition occurrence,person id,cohort,subject id,0.37254698374763107,Type2,3
+diagnoses icd,seq num,none,none,specimen,disease status concept id,0.3170193766050977,Type5,1
+diagnoses icd,icd9 code,condition occurrence,condition source value,note,encoding concept id,0.2733160200094335,Type2,3
+diagnoses icd,hadm id,condition occurrence,visit occurrence id,condition era,person id,0.31641627146390955,Type2,3
+datetimeevents,warning,none,none,procedure occurrence,procedure datetime,0.40784955295735853,Type5,1
+datetimeevents,valueuom,observation,unit source value,procedure occurrence,procedure datetime,0.45039763331776905,Type2,3
+datetimeevents,value,observation,value as datetime,observation,value as datetime,0.4063330933939224,Type1,5
+datetimeevents,subject id,observation,person id,observation,observation event id,0.42516902040275356,Type2,3
+datetimeevents,storetime,none,none,procedure occurrence,procedure datetime,0.41738634172631756,Type5,1
+datetimeevents,stopped,none,none,procedure occurrence,procedure datetime,0.39574420425832335,Type5,1
+datetimeevents,resultstatus,none,none,procedure occurrence,procedure datetime,0.4472891964780435,Type5,1
+datetimeevents,itemid,observation,observation source value,procedure occurrence,procedure datetime,0.40641223936826776,Type2,3
+datetimeevents,icustay id,observation,visit detail id,observation,observation event id,0.43567512831470667,Type2,3
+datetimeevents,hadm id,observation,visit occurrence id,observation,observation event id,0.404013334105056,Type2,3
+datetimeevents,error,none,none,procedure occurrence,procedure datetime,0.4455453920676355,Type5,1
+datetimeevents,charttime,observation,observation datetime,observation,observation datetime,0.34019178318092047,Type1,5
+datetimeevents,cgid,observation,provider id,note nlp,nlp datetime,0.40665144245647855,Type2,3
+d labitems,loinc code,concept,concept code,concept,concept code,0.38730389164011153,Type1,5
+d labitems,label,concept,concept name,specimen,specimen id,0.40663948129123684,Type2,3
+d labitems,itemid,concept,concept id,specimen,specimen id,0.42270508283711683,Type2,3
+d labitems,fluid,concept,domain id,specimen,quantity,0.4100077210127761,Type2,3
+d labitems,category,concept,concept class id,concept,vocabulary id,0.38764600038676733,Type2,3
+d items,unitname,none,none,dose era,unit concept id,0.4595890435015044,Type5,1
+d items,param type,none,none,condition occurrence,condition type concept id,0.3344522852051327,Type5,1
+d items,linksto,none,none,note,visit detail id,0.35325766701917877,Type5,1
+d items,label,concept,concept name,measurement,value as concept id,0.3424042594792992,Type2,3
+d items,itemid,concept,concept id,cost,cost event id,0.3493333447950361,Type2,3
+d items,dbsource,none,none,dose era,unit concept id,0.32141212272398045,Type5,1
+d items,conceptid,none,none,concept,concept id,0.47601862756069035,Type5,1
+d items,category,concept,concept class id,vocabulary,vocabulary concept id,0.3461668940828181,Type2,3
+d items,abbreviation,concept,concept code,dose era,unit concept id,0.38035368756691557,Type2,3
+d icd procedures,short title,concept,concept class id,procedure occurrence,procedure concept id,0.3511180669171005,Type2,3
+d icd procedures,long title,concept,concept name,provider,specialty concept id,0.32484790513454453,Type2,3
+d icd procedures,icd9 code,concept,vocabulary id,procedure occurrence,modifier concept id,0.3488940948861721,Type2,3
+d icd diagnoses,short title,concept,concept class id,specimen,disease status concept id,0.28109335487970005,Type2,3
+d icd diagnoses,long title,concept,concept name,specimen,disease status concept id,0.2760377241082117,Type2,3
+d icd diagnoses,icd9 code,concept,vocabulary id,note,encoding concept id,0.26596782360111526,Type2,3
+d cpt,subsectionrange,none,none,note nlp,"""offset""",0.3129718585588598,Type5,1
+d cpt,subsectionheader,none,none,note nlp,section concept id,0.3311595671729973,Type5,1
+d cpt,sectionrange,concept,concept code,note nlp,"""offset""",0.33448512653849566,Type2,3
+d cpt,sectionheader,concept,concept name,note nlp,section concept id,0.372224574579687,Type2,3
+d cpt,mincodeinsubsection,none,none,note,encoding concept id,0.33457362217010145,Type5,1
+d cpt,maxcodeinsubsection,none,none,note,encoding concept id,0.31347763096640135,Type5,1
+d cpt,codesuffix,none,none,cdm source,source documentation reference,0.30732283038293173,Type5,1
+d cpt,category,concept,concept class id,concept,concept class id,0.30819712634754637,Type1,5
+cptevents,ticket id seq,procedure occurrence,quantity,cost,cost event id,0.3910277831649507,Type2,3
+cptevents,subsectionheader,none,none,note nlp,section concept id,0.28371354870143034,Type5,1
+cptevents,subject id,procedure occurrence,person id,observation,obs event field concept id,0.39703099491506966,Type2,3
+cptevents,sectionheader,none,none,note nlp,section concept id,0.3343289605634069,Type5,1
+cptevents,hadm id,procedure occurrence,visit occurrence id,note,provider id,0.3907514505358795,Type2,3
+cptevents,description,none,none,observation,obs event field concept id,0.31497855919925993,Type5,1
+cptevents,cpt suffix,procedure occurrence,modifier source value,provider,provider name,0.27358763176702494,Type2,3
+cptevents,cpt number,procedure occurrence,procedure concept id,observation,obs event field concept id,0.28929472306891674,Type2,3
+cptevents,cpt cd,procedure occurrence,procedure source value,cdm source,cdm version,0.37628247890290034,Type2,3
+cptevents,costcenter,none,none,cost,cost,0.3757132296694845,Type5,1
+cptevents,chartdate,procedure occurrence,procedure date,observation,observation date,0.3735944906962864,Type2,3
+claim,ptnt dschrg stus cd,visit occurrence,discharge to concept id,cdm source,cdm holder,0.39274130306788624,Type2,3
+claim,prvdr state cd,provider,provider state,cdm source,cdm holder,0.40270694342021673,Type2,3
+claim,prvdr num,provider,provider id,cdm source,cdm holder,0.3642896818322303,Type2,3
+claim,prncpal dgns vrsn cd,condition occurrence,condition source value,cdm source,cdm holder,0.3867425465150772,Type2,3
+claim,prncpal dgns cd,condition occurrence,condition concept id,cdm source,cdm holder,0.39748110156760896,Type2,3
+claim,ot physn upin,none,none,observation,unit source value,0.3075206640929439,Type5,1
+claim,ot physn npi,provider,provider npi,provider,npi,0.4590931966341095,Type2,3
+claim,org npi num,provider,provider npi,provider,npi,0.46070264989639387,Type2,3
+claim,op physn upin,none,none,observation,unit source value,0.3085974697339233,Type5,1
+claim,op physn npi,provider,provider npi,provider,npi,0.44135575002710026,Type2,3
+claim,nch vrfd ncvrd stay thru dt,none,none,visit detail,discharge to source value,0.3577601896100311,Type5,1
+claim,nch vrfd ncvrd stay from dt,none,none,visit detail,discharge to source value,0.3712152562482608,Type5,1
+claim,nch ptnt status ind cd,none,none,cdm source,cdm holder,0.3828628622819076,Type5,1
+claim,nch profnl cmpnt chrg amt,cost,professional component charge,cdm source,cdm source abbreviation,0.3503601231746771,Type2,3
+claim,nch prmry pyr clm pd amt,cost,paid by payer,cdm source,source description,0.34576958340709085,Type2,3
+claim,nch prmry pyr cd,none,none,cdm source,source description,0.38707344801997845,Type5,1
+claim,nch near line rec ident cd,none,none,cdm source,cdm holder,0.4065238002191629,Type5,1
+claim,nch ip ncvrd chrg amt,cost,non covered charge amount,provider,npi,0.32339461908746103,Type2,3
+claim,nch drg outlier aprvd pmt amt,none,none,cost,drg source value,0.3562809129057335,Type5,1
+claim,nch clm type cd,visit occurrence,visit type concept id,cdm source,cdm holder,0.4589162052656953,Type2,3
+claim,nch blood pnts frnshd qty,none,none,specimen,disease status source value,0.3593891468440812,Type5,1
+claim,nch bene pta coinsrnc lblty amt,cost,coinsurance amount,visit detail,admitted from source value,0.3500759928306313,Type2,3
+claim,nch bene mdcr bnfts exhtd dt i,none,none,visit detail,admitted from source value,0.33910318154189356,Type5,1
+claim,nch bene ip ddctbl amt,cost,deductible amount,provider,npi,0.35625825990912185,Type2,3
+claim,nch bene dschrg dt,visit occurrence,visit end date,cost,incurred date,0.31919146241926577,Type2,3
+claim,nch bene blood ddctbl lblty am,cost,blood deductible amount,specimen,disease status source value,0.34261441485471067,Type2,3
+claim,icd dgns vrsn cd3,condition occurrence,condition source value,cdm source,source description,0.386408841725395,Type2,3
+claim,icd dgns vrsn cd2,condition occurrence,condition source value,cdm source,source description,0.38876838051672524,Type2,3
+claim,icd dgns vrsn cd1,condition occurrence,condition source value,cdm source,cdm holder,0.3841365483608771,Type2,3
+claim,icd dgns cd3,condition occurrence,condition concept id,cdm source,source description,0.38738177858101747,Type2,3
+claim,icd dgns cd2,condition occurrence,condition concept id,cdm source,source description,0.38776288404845893,Type2,3
+claim,icd dgns cd1,condition occurrence,condition concept id,cdm source,source description,0.3840690401335978,Type2,3
+claim,fi num,none,none,survey conduct,provider id,0.33855009168994493,Type5,1
+claim,fi clm actn cd,none,none,cdm source,source description,0.44005629745798513,Type5,1
+claim,desy sort key,none,none,condition occurrence,person id,0.3094043458358735,Type5,1
+claim,clm utlztn day cnt,visit occurrence,length of stay,cost,incurred date,0.3576578433832409,Type2,3
+claim,clm tot pps cptl amt,none,none,provider,provider source value,0.36223597902838534,Type5,1
+claim,clm tot chrg amt,cost,total charge,cdm source,cdm holder,0.36371202182382456,Type2,3
+claim,clm thru dt,visit occurrence,visit end date,cdm source,source description,0.384112178185486,Type2,3
+claim,clm srvc clsfctn type cd,none,none,cdm source,cdm holder,0.4501705386043493,Type5,1
+claim,clm src ip admsn cd,visit occurrence,admitting source concept id,cdm source,cdm holder,0.429297034677132,Type2,3
+claim,clm pps old cptl hld hrmls amt,none,none,cdm source,cdm etl reference,0.36076397781521313,Type5,1
+claim,clm pps ind cd,none,none,cdm source,cdm holder,0.4788069094637185,Type5,1
+claim,clm pps cptl outlier amt,none,none,measurement,provider id,0.32397062921969716,Type5,1
+claim,clm pps cptl ime amt,none,none,visit detail,admitted from source value,0.3524534180124719,Type5,1
+claim,clm pps cptl fsp amt,none,none,visit detail,admitted from source value,0.35267391146225097,Type5,1
+claim,clm pps cptl excptn amt,none,none,provider,provider source value,0.35714259063527554,Type5,1
+claim,clm pps cptl dsprprtnt shr amt,none,none,provider,provider source value,0.34668868155279664,Type5,1
+claim,clm pps cptl drg wt num,none,none,cost,drg source value,0.3700313203593487,Type5,1
+claim,clm poa ind sw3,condition occurrence,present on admission concept id,visit detail,admitted from source value,0.3541149509936513,Type2,3
+claim,clm poa ind sw2,condition occurrence,present on admission concept id,visit detail,admitted from source value,0.35283690935523826,Type2,3
+claim,clm poa ind sw1,condition occurrence,present on admission concept id,visit detail,admitted from source value,0.3536137236691178,Type2,3
+claim,clm pmt amt,cost,paid amount,cdm source,cdm holder,0.3435683658762604,Type2,3
+claim,clm pass thru per diem amt,cost,pass through amount,cdm source,cdm holder,0.3595079634180097,Type2,3
+claim,clm non utlztn days cnt,none,none,cost,incurred date,0.3676950100106796,Type5,1
+claim,clm mdcr non pmt rsn cd,none,none,cdm source,cdm holder,0.3926893558662452,Type5,1
+claim,clm mco pd sw,none,none,visit detail,discharge to concept id,0.3537246679210565,Type5,1
+claim,clm ip admsn type cd,visit occurrence,admitting source concept id,cdm source,cdm holder,0.468033890422343,Type2,3
+claim,clm freq cd,visit occurrence,visit occurrence id,cdm source,cdm holder,0.4441707105495203,Type2,3
+claim,clm fac type cd,visit occurrence,care site id,cdm source,source description,0.4408906484109767,Type2,3
+claim,clm drg outlier stay cd,none,none,cdm source,cdm holder,0.44644593808986,Type5,1
+claim,clm drg cd,none,none,cdm source,source description,0.45737251855489447,Type5,1
+claim,clm admsn dt,visit occurrence,visit start date,cdm source,source description,0.3860501970219396,Type2,3
+claim,claim query code,none,none,condition occurrence,provider id,0.3656700513285621,Type5,1
+claim,claim no,visit occurrence,visit occurrence id,visit detail,admitted from source value,0.3290923983664099,Type2,3
+claim,bene tot coinsrnc days cnt,none,none,cost,paid date,0.36805069491537423,Type5,1
+claim,bene lrd used cnt,none,none,visit detail,admitted from source value,0.31056864695073394,Type5,1
+claim,at physn upin,none,none,visit detail,admitted from source value,0.33444205679267314,Type5,1
+claim,at physn npi,provider,provider npi,provider,npi,0.45519017791048566,Type2,3
+claim,admtg dgns vrsn cd,condition occurrence,condition source value,cdm source,cdm holder,0.3847774938817401,Type2,3
+claim,admtg dgns cd,condition occurrence,condition concept id,cdm source,cdm holder,0.394391315187553,Type2,3
+chartevents,warning,none,none,note,note event id,0.2691097656337199,Type5,1
+chartevents,valueuom,measurement,unit concept id,observation,value as number,0.30654550009587755,Type2,3
+chartevents,valuenum,measurement,value as number,measurement,value as number,0.30513663209794534,Type1,5
+chartevents,value,measurement,value as string,cost,cost event id,0.29412049026463505,Type2,3
+chartevents,subject id,measurement,person id,observation,observation event id,0.35545457242553824,Type2,3
+chartevents,storetime,none,none,measurement,measurement datetime,0.3165430709734583,Type5,1
+chartevents,stopped,none,none,note,note event id,0.24054810623995682,Type5,1
+chartevents,resultstatus,none,none,observation,observation event id,0.29795653372173886,Type5,1
+chartevents,itemid,measurement,measurement concept id,cost,cost event id,0.35329233461159926,Type2,3
+chartevents,icustay id,measurement,visit detail id,observation,observation event id,0.38089675254525496,Type2,3
+chartevents,hadm id,measurement,visit occurrence id,observation,observation event id,0.34568488824274346,Type2,3
+chartevents,error,none,none,note,note event field concept id,0.26076327692500967,Type5,1
+chartevents,charttime,measurement,measurement datetime,note nlp,nlp datetime,0.3009495833669407,Type2,3
+chartevents,cgid,measurement,provider id,note,note event id,0.2957834718307455,Type2,3
+caregivers,label,provider,provider name,care site,care site name,0.5777747504219723,Type2,3
+caregivers,description,provider,provider source value,care site,care site name,0.5635035788933022,Type2,3
+caregivers,cgid,provider,provider id,care site,care site id,0.5199322788536499,Type2,3
+callout,updatetime,none,none,note,note datetime,0.3185037169786191,Type5,1
+callout,submit wardid,visit detail,care site id,note,provider id,0.3021892501380114,Type2,3
+callout,submit careunit,visit detail,visit detail concept id,care site,care site name,0.38532406593357543,Type2,3
+callout,subject id,visit detail,person id,person,gender concept id,0.3799083238007228,Type2,3
+callout,request vre,none,none,provider,npi,0.30927430276311296,Type5,1
+callout,request tele,none,none,provider,npi,0.2875708580237338,Type5,1
+callout,request resp,none,none,note,provider id,0.30669001700869136,Type5,1
+callout,request mrsa,none,none,person,care site id,0.29422566585861337,Type5,1
+callout,request cdiff,none,none,cdm source,source description,0.31961740016739076,Type5,1
+callout,outcometime,visit detail,visit detail start datetime,survey conduct,timing concept id,0.3343181889769582,Type2,3
+callout,hadm id,visit detail,visit occurrence id,note,provider id,0.40524938747725114,Type2,3
+callout,firstreservationtime,none,none,visit detail,visit detail start datetime,0.3360671688393918,Type5,1
+callout,discharge wardid,visit detail,discharge to source value,visit detail,discharge to source value,0.3627228465245989,Type1,5
+callout,currentreservationtime,none,none,measurement,measurement time,0.32881172062358505,Type5,1
+callout,curr wardid,visit detail,admitted from concept id,note,note id,0.31400759198297823,Type2,3
+callout,curr careunit,none,none,care site,care site name,0.3740750516302769,Type5,1
+callout,createtime,none,none,note,note datetime,0.3337330421456175,Type5,1
+callout,callout wardid,none,none,care site,place of service concept id,0.3123902306816807,Type5,1
+callout,callout status,none,none,condition occurrence,condition status concept id,0.3113895203359987,Type5,1
+callout,callout service,none,none,care site,place of service concept id,0.3007081469211122,Type5,1
+callout,callout outcome,none,none,procedure occurrence,quantity,0.25308117679395115,Type5,1
+callout,acknowledgetime,none,none,note,note datetime,0.3229417379352013,Type5,1
+callout,acknowledge status,none,none,note,provider id,0.2986077956007323,Type5,1
+admissions,subject id,visit occurrence,person id,visit detail,admitted from concept id,0.43591749845025735,Type2,3
+admissions,religion,none,none,visit detail,admitted from concept id,0.3043093456183187,Type5,1
+admissions,marital status,none,none,visit detail,admitted from concept id,0.3295621825421746,Type5,1
+admissions,language,none,none,note,language concept id,0.36044191013217775,Type5,1
+admissions,insurance,none,none,visit detail,admitted from concept id,0.3676755108403924,Type5,1
+admissions,hospital expire flag,none,none,concept,valid end date,0.3013622628899919,Type5,1
+admissions,has chartevents data,none,none,visit detail,admitted from source value,0.30845350351814205,Type5,1
+admissions,hadm id,visit occurrence,visit occurrence id,visit detail,admitted from concept id,0.43195799631943527,Type2,3
+admissions,ethnicity,person,ethnicity concept id,person,ethnicity concept id,0.4375596736665517,Type1,5
+admissions,edregtime,none,none,visit detail,admitted from concept id,0.3254295526435952,Type5,1
+admissions,edouttime,none,none,visit detail,visit detail start datetime,0.347784545601181,Type5,1
+admissions,dischtime,visit occurrence,visit end datetime,visit detail,admitted from concept id,0.37122440305985827,Type2,3
+admissions,discharge location,visit occurrence,discharge to concept id,visit occurrence,discharge to concept id,0.3708329616797391,Type1,5
+admissions,diagnosis,none,none,visit detail,admitted from concept id,0.3675935488273975,Type5,1
+admissions,deathtime,none,none,person,death datetime,0.4118428145927991,Type5,1
+admissions,admittime,visit occurrence,visit start datetime,visit detail,admitted from concept id,0.34580882442680194,Type2,3
+admissions,admission type,visit occurrence,visit type concept id,visit detail,admitted from concept id,0.3578774327167008,Type2,3
+admissions,admission location,visit occurrence,admitted from source value,location,state,0.35185029173649923,Type2,3
