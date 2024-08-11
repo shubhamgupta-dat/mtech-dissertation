@@ -110,6 +110,19 @@ class Evaluator:
         )
 
     @classmethod
+    def match_type_counts(cls, df_match):
+        type1 = sum(df_match["match_type"] == "Type1")
+        type2 = sum(df_match["match_type"] == "Type2")
+        type3 = sum(df_match["match_type"] == "Type3")
+        type4 = sum(df_match["match_type"] == "Type4")
+        type5 = sum(df_match["match_type"] == "Type5")
+
+        LOGGER.info(
+            f"Total Type of Values Present are: 1:{type1}, 2:{type2}, 3:{type3}, 4:{type4}, 5:{type5}"
+        )
+        return type1, type2, type3, type4, type5
+
+    @classmethod
     def find_df_matches(cls, df_true, df_pred):
         df_match = df_true.merge(
             df_pred,
@@ -117,6 +130,8 @@ class Evaluator:
             how="outer",
             suffixes=("_true", "_pred"),
         ).fillna("none")
+        if "confidence_score" not in df_match:
+            df_match["confidence_score"] = 0
         col_order = [
             "source_table",
             "source_column",
@@ -124,17 +139,11 @@ class Evaluator:
             "target_column_true",
             "target_table_pred",
             "target_column_pred",
+            "confidence_score",
         ]
-        (type1, type2, type3, type4, type5) = cls.__find_all_type_matches(
-            df_match[col_order]
-        )
-        type1, type2, type3, type4, type5 = (
-            len(type1),
-            len(type2),
-            len(type3),
-            len(type4),
-            len(type5),
-        )
+        LOGGER.info(f"Number of columns in df_match: {df_match.columns}")
+        df_match = cls.__find_all_type_matches(df_match[col_order])
+        type1, type2, type3, type4, type5 = cls.match_type_counts(df_match)
         precision = cls.calculate_average_precision(type1, type2)
         col_acc = cls.calculate_average_column_accuracy(type1, type2, type3)
         gross_acc = cls.calculate_average_gross_accuracy(
@@ -146,68 +155,59 @@ class Evaluator:
         2. Column Accuracy: {col_acc}
         3. Gross Accuracy: {gross_acc}"""
         )
-        return precision, col_acc, gross_acc
+        return precision, col_acc, gross_acc, type1, type4
 
     @classmethod
-    def __find_all_type_matches(cls, df_match):
-        # 1. Initialise Empty list to feed the capture the types of matches
-        type_1_matches = []
-        type_2_matches = []
-        type_3_matches = []
-        type_4_matches = []
-        type_5_matches = []
-
-        # 4. Filter out matches
+    def __find_all_type_matches(cls, df_match: pd.DataFrame):
+        df_match["match_type"] = "Type2"
         true_none_filter = df_match["target_column_true"] == "none"
         pred_none_filter = df_match["target_column_pred"] == "none"
         correct_filter = (
-            df_match["target_table_true"] == df_match["target_table_pred"]
-        ) & (df_match["target_column_true"] == df_match["target_column_pred"])
+            (df_match["target_table_true"] == df_match["target_table_pred"])
+            & (df_match["target_column_true"] == df_match["target_column_pred"])
+            & (df_match["target_column_pred"] != "none")
+        )
 
         # 4.1 Check for Type 4
         type_4_filter = true_none_filter & pred_none_filter
-        df_type_4 = df_match[type_4_filter]
-        df_remain = df_match[~type_4_filter]
-        type_4_matches.extend(df_type_4.to_dict(orient="records"))
-        LOGGER.info("Type 4")
-        LOGGER.info(df_type_4)
+        df_match.loc[type_4_filter, "match_type"] = "Type4"
 
         # 4.2 Check for Type 3
-        type_3_filter = pred_none_filter
-        df_type_3 = df_remain[type_3_filter]
-        df_remain = df_remain[~type_3_filter]
-        type_3_matches.extend(df_type_3.to_dict(orient="records"))
-        LOGGER.info("Type 3")
-        LOGGER.info(df_type_3)
+        type_3_filter = (~true_none_filter) & pred_none_filter
+        df_match.loc[type_3_filter, "match_type"] = "Type3"
 
         # 4.3 Check for Type 5
-        type_5_filter = true_none_filter
-        df_type_5 = df_remain[type_5_filter]
-        df_remain = df_remain[~type_5_filter]
-        type_5_matches.extend(df_type_5.to_dict(orient="records"))
-        LOGGER.info("Type 5")
-        LOGGER.info(df_type_5)
+        type_5_filter = (true_none_filter) & (~pred_none_filter)
+        df_match.loc[type_5_filter, "match_type"] = "Type5"
 
         # 4.4 Check for Type 1
         type_1_filter = correct_filter
-        df_type_1 = df_remain[type_1_filter]
-        df_remain = df_remain[~type_1_filter]
-        type_1_matches.extend(df_type_1.to_dict(orient="records"))
-        LOGGER.info("Type 1")
-        LOGGER.info(df_type_1)
+        df_match.loc[type_1_filter, "match_type"] = "Type1"
 
-        # 4.5 Check for Type 2
-        type_2_matches.extend(df_remain.to_dict(orient="records"))
-        LOGGER.info("Type 2")
-        LOGGER.info(df_remain)
-
-        return (
-            type_1_matches,
-            type_2_matches,
-            type_3_matches,
-            type_4_matches,
-            type_5_matches,
+        duplicate_col_list = [
+            "source_table",
+            "source_column",
+            "target_table_true",
+            "target_column_true",
+        ]
+        precidence_score = {
+            "Type1": 5,
+            "Type2": 3,
+            "Type3": 2,
+            "Type4": 4,
+            "Type5": 1,
+        }
+        df_match["reliability_score"] = df_match["match_type"].apply(
+            lambda x: precidence_score[x]
         )
+        df_match = df_match.sort_values(
+            duplicate_col_list + ["reliability_score", "confidence_score"],
+            ascending=False,
+        )
+        df_match = df_match.drop_duplicates(duplicate_col_list, keep="first")
+        (df_match.match_type.value_counts().to_dict())
+
+        return df_match
 
     @classmethod
     def calculate_average_precision(cls, type1, type2):
