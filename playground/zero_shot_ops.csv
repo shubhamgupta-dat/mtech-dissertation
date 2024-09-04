@@ -1,0 +1,504 @@
+source_table,source_column,target_table_pred,target_table_column_pred
+ADMISSIONS,SUBJECT_ID,person,person_id
+ADMISSIONS,HADM_ID,visit_occurrence,visit_occurrence_id
+ADMISSIONS,ADMITTIME,VISIT_OCCURRENCE,visit_start_datetime
+ADMISSIONS,DISCHTIME,VISIT_OCCURRENCE,visit_end_datetime
+ADMISSIONS,DEATHTIME,DEATH  ,death_datetime
+ADMISSIONS,ADMISSION_TYPE,VISIT_OCCURRENCE,ADMITTING_SOURCE_CONCEPT_ID
+ADMISSIONS,ADMISSION_LOCATION,visit_occurrence,admitting_source_concept_id
+ADMISSIONS,DISCHARGE_LOCATION,VISIT_OCCURRENCE,discharge_to_concept_id
+ADMISSIONS,INSURANCE,VISIT_OCCURRENCE,payer_source_value
+ADMISSIONS,LANGUAGE,PERSON,language_concept_id
+ADMISSIONS,RELIGION,PERSON,religion_concept_id
+ADMISSIONS,MARITAL_STATUS,PERSON  ,marital_status_concept_id
+ADMISSIONS,ETHNICITY,PERSON  ,race_concept_id
+ADMISSIONS,EDREGTIME,visit_occurrence,visit_start_datetime
+ADMISSIONS,EDOUTTIME,VISIT_OCCURRENCE  ,visit_end_datetime
+ADMISSIONS,DIAGNOSIS,CONDITION_OCCURRENCE,condition_source_value
+ADMISSIONS,HOSPITAL_EXPIRE_FLAG,DEATH  ,death_type_concept_id
+ADMISSIONS,HAS_CHARTEVENTS_DATA,observation,value_as_concept_id
+CALLOUT,SUBJECT_ID,person,person_id
+CALLOUT,HADM_ID,visit_occurrence,visit_occurrence_id
+CALLOUT,SUBMIT_WARDID,visit_occurrence,care_site_id
+CALLOUT,SUBMIT_CAREUNIT,,
+CALLOUT,CURR_WARDID,visit_occurrence,care_site_id
+CALLOUT,CURR_CAREUNIT,care_site,care_site_name
+CALLOUT,CALLOUT_WARDID,visit_occurrence,care_site_id
+CALLOUT,CALLOUT_SERVICE,,
+CALLOUT,REQUEST_TELE,,
+CALLOUT,REQUEST_RESP,,
+CALLOUT,REQUEST_CDIFF,observation,observation_concept_id
+CALLOUT,REQUEST_MRSA,,
+CALLOUT,REQUEST_VRE,,
+CALLOUT,CALLOUT_STATUS,visit_occurrence,discharge_to_concept_id
+CALLOUT,CALLOUT_OUTCOME,condition_occurrence,condition_status_source_value
+CALLOUT,DISCHARGE_WARDID,visit_occurrence,discharge_to_concept_id
+CALLOUT,ACKNOWLEDGE_STATUS,fact_relationship,relationship_concept_id
+CALLOUT,CREATETIME,visit_occurrence,visit_start_datetime
+CALLOUT,UPDATETIME,,
+CALLOUT,ACKNOWLEDGETIME,fact_relationship,fact_id_2
+CALLOUT,OUTCOMETIME,visit_occurrence,discharge_datetime
+CALLOUT,FIRSTRESERVATIONTIME,visit_occurrence,visit_start_datetime
+CALLOUT,CURRENTRESERVATIONTIME,,
+CAREGIVERS,CGID,provider  ,provider_id
+CAREGIVERS,LABEL,care_site,care_site_name
+CAREGIVERS,DESCRIPTION,Care_Site,care_site_name
+CHARTEVENTS,SUBJECT_ID,person,person_id
+CHARTEVENTS,HADM_ID,visit_occurrence,visit_occurrence_id
+CHARTEVENTS,ICUSTAY_ID,visit_occurrence,visit_occurrence_id
+CHARTEVENTS,ITEMID,OBSERVATION,observation_concept_id
+CHARTEVENTS,CHARTTIME,OBSERVATION,observation_datetime
+CHARTEVENTS,STORETIME,OBSERVATION,OBSERVATION_DATETIME
+CHARTEVENTS,CGID,measurement,provider_id
+CHARTEVENTS,VALUE,measurement  ,value_as_number
+CHARTEVENTS,VALUENUM,MEASUREMENT,value_as_number
+CHARTEVENTS,VALUEUOM,Measurement,unit_concept_id
+CHARTEVENTS,WARNING,NOTE,note_text
+CHARTEVENTS,ERROR,measurement,value_as_concept_id
+CHARTEVENTS,RESULTSTATUS,measurement,value_as_concept_id
+CHARTEVENTS,STOPPED,observation,value_as_string
+CPTEVENTS,SUBJECT_ID,procedure_occurrence,person_id
+CPTEVENTS,HADM_ID,visit_occurrence,visit_occurrence_id
+CPTEVENTS,COSTCENTER,,
+CPTEVENTS,CHARTDATE,procedure_occurrence,procedure_date
+CPTEVENTS,CPT_CD,PROCEDURE_OCCURRENCE,procedure_concept_id
+CPTEVENTS,CPT_NUMBER,PROCEDURE_OCCURRENCE,PROCEDURE_CONCEPT_ID
+CPTEVENTS,CPT_SUFFIX,procedure_occurrence,modifier_concept_id
+CPTEVENTS,TICKET_ID_SEQ,visit_occurrence,visit_occurrence_id
+CPTEVENTS,SECTIONHEADER,,
+CPTEVENTS,SUBSECTIONHEADER,,
+CPTEVENTS,DESCRIPTION,`procedure_occurrence`,`procedure_concept_id`
+D_CPT,CATEGORY,concept,concept_class_id
+D_CPT,SECTIONRANGE,concept,concept_code
+D_CPT,SECTIONHEADER,concept,concept_name
+D_CPT,SUBSECTIONRANGE,,
+D_CPT,SUBSECTIONHEADER,,
+D_CPT,CODESUFFIX,concept,concept_code
+D_CPT,MINCODEINSUBSECTION,concept,concept_code
+D_CPT,MAXCODEINSUBSECTION,concept,concept_code
+D_ICD_DIAGNOSES,ICD9_CODE,condition_occurrence,condition_source_value
+D_ICD_DIAGNOSES,SHORT_TITLE,concept,concept_name
+D_ICD_DIAGNOSES,LONG_TITLE,concept,concept_name
+D_ICD_PROCEDURES,ICD9_CODE,procedure_occurrence,procedure_concept_id
+D_ICD_PROCEDURES,SHORT_TITLE,procedure_occurrence,procedure_concept_id
+D_ICD_PROCEDURES,LONG_TITLE,procedure_occurrence,procedure_concept_id
+d_items,ITEMID,concept,concept_id
+d_items,LABEL,concept,concept_name
+d_items,ABBREVIATION,concept,concept_code
+d_items,DBSOURCE,,
+d_items,LINKSTO,concept_relationship,relationship_id
+d_items,CATEGORY,concept,concept_class_id
+d_items,UNITNAME,measurement,unit_concept_id
+d_items,PARAM_TYPE,measurement,measurement_type_concept_id
+d_items,CONCEPTID,concept,concept_id
+D_LABITEMS,ITEMID,measurement,measurement_concept_id
+D_LABITEMS,LABEL,concept,concept_name
+D_LABITEMS,FLUID,measurement,measurement_concept_id
+D_LABITEMS,CATEGORY,,
+D_LABITEMS,LOINC_CODE,concept,concept_code
+DATETIMEEVENTS,SUBJECT_ID,observation,person_id
+DATETIMEEVENTS,HADM_ID,VISIT_OCCURRENCE,VISIT_OCCURRENCE_ID
+DATETIMEEVENTS,ICUSTAY_ID,visit_occurrence,visit_occurrence_id
+DATETIMEEVENTS,ITEMID,measurement,measurement_concept_id
+DATETIMEEVENTS,CHARTTIME,OBSERVATION,OBSERVATION_DATETIME
+DATETIMEEVENTS,STORETIME,OBSERVATION,OBSERVATION_DATETIME
+DATETIMEEVENTS,CGID,measurement,provider_id
+DATETIMEEVENTS,VALUE,,
+DATETIMEEVENTS,VALUEUOM,MEASUREMENT,unit_concept_id
+DATETIMEEVENTS,WARNING,observation,value_as_string
+DATETIMEEVENTS,ERROR,observation,value_as_string
+DATETIMEEVENTS,RESULTSTATUS,,
+DATETIMEEVENTS,STOPPED,DRUG_EXPOSURE,drug_exposure_end_datetime
+DIAGNOSES_ICD,SUBJECT_ID,CONDITION_OCCURRENCE,PERSON_ID
+DIAGNOSES_ICD,HADM_ID,CONDITION_OCCURRENCE,visit_occurrence_id
+DIAGNOSES_ICD,SEQ_NUM,CONDITION_OCCURRENCE,condition_occurrence_id
+DIAGNOSES_ICD,ICD9_CODE,CONDITION_OCCURRENCE,condition_source_value
+DRGCODES,SUBJECT_ID,person,person_id
+DRGCODES,HADM_ID,visit_occurrence,visit_occurrence_id
+DRGCODES,DRG_TYPE,DRG_OCCURRENCE,drg_concept_id
+DRGCODES,DRG_CODE,DRG_OCCURRENCE  ,drg_concept_id
+DRGCODES,DESCRIPTION,,
+DRGCODES,DRG_SEVERITY,DRG_OCCURRENCE,drg_concept_id
+DRGCODES,DRG_MORTALITY,DRG_OCCURRENCE,drg_concept_id
+ICUSTAYS,SUBJECT_ID,PERSON,person_id
+ICUSTAYS,HADM_ID,visit_occurrence,visit_occurrence_id
+ICUSTAYS,ICUSTAY_ID,VISIT_OCCURRENCE,VISIT_OCCURRENCE_ID
+ICUSTAYS,DBSOURCE,,
+ICUSTAYS,FIRST_CAREUNIT,care_site,care_site_name
+ICUSTAYS,LAST_CAREUNIT,visit_detail,care_site_id
+ICUSTAYS,FIRST_WARDID,visit_occurrence,admitting_source_concept_id
+ICUSTAYS,LAST_WARDID,visit_occurrence,care_site_id
+ICUSTAYS,INTIME,VISIT_OCCURRENCE  ,visit_start_datetime
+ICUSTAYS,OUTTIME,VISIT_OCCURRENCE  ,visit_end_datetime
+ICUSTAYS,LOS,VISIT_OCCURRENCE,visit_duration
+INPUTEVENTS_CV,SUBJECT_ID,person,person_id
+INPUTEVENTS_CV,HADM_ID,visit_occurrence,visit_occurrence_id
+INPUTEVENTS_CV,ICUSTAY_ID,visit_occurrence,visit_occurrence_id
+INPUTEVENTS_CV,CHARTTIME,DRUG_EXPOSURE,drug_exposure_start_datetime
+INPUTEVENTS_CV,ITEMID,DRUG_EXPOSURE,DRUG_CONCEPT_ID
+INPUTEVENTS_CV,AMOUNT,DRUG_EXPOSURE,quantity
+INPUTEVENTS_CV,AMOUNTUOM,DRUG_EXPOSURE,dose_unit_source_value
+INPUTEVENTS_CV,RATE,DRUG_EXPOSURE,DOSE_UNIT_SOURCE_VALUE
+INPUTEVENTS_CV,RATEUOM,DRUG_EXPOSURE,dose_unit_source_value
+INPUTEVENTS_CV,STORETIME,DRUG_EXPOSURE,drug_exposure_start_datetime
+INPUTEVENTS_CV,CGID,,
+INPUTEVENTS_CV,ORDERID,drug_exposure,drug_exposure_id
+INPUTEVENTS_CV,LINKORDERID,DRUG_EXPOSURE,VISIT_OCCURRENCE_ID
+INPUTEVENTS_CV,STOPPED,DRUG_EXPOSURE,drug_exposure_end_datetime
+INPUTEVENTS_CV,NEWBOTTLE,DRUG_EXPOSURE,quantity
+INPUTEVENTS_CV,ORIGINALAMOUNT,DRUG_EXPOSURE,quantity
+INPUTEVENTS_CV,ORIGINALAMOUNTUOM,DRUG_EXPOSURE  ,dose_unit_source_value
+INPUTEVENTS_CV,ORIGINALROUTE,DRUG_EXPOSURE  ,route_concept_id
+INPUTEVENTS_CV,ORIGINALRATE,DRUG_EXPOSURE,dose_unit_source_value
+INPUTEVENTS_CV,ORIGINALRATEUOM,DRUG_EXPOSURE,dose_unit_source_value
+INPUTEVENTS_CV,ORIGINALSITE,DRUG_EXPOSURE,route_concept_id
+LABEVENTS,SUBJECT_ID,measurement  ,person_id
+LABEVENTS,HADM_ID,measurement  ,visit_occurrence_id
+LABEVENTS,ITEMID,measurement  ,measurement_concept_id
+LABEVENTS,CHARTTIME,measurement,measurement_datetime
+LABEVENTS,VALUE,measurement  ,value_as_number
+LABEVENTS,VALUENUM,measurement  ,value_as_number
+LABEVENTS,VALUEUOM,measurement,unit_concept_id
+LABEVENTS,FLAG,measurement,value_as_concept_id
+MICROBIOLOGYEVEN,SUBJECT_ID,measurement,person_id
+MICROBIOLOGYEVEN,HADM_ID,visit_occurrence,visit_occurrence_id
+MICROBIOLOGYEVEN,CHARTDATE,measurement,measurement_date
+MICROBIOLOGYEVEN,CHARTTIME,measurement,measurement_datetime
+MICROBIOLOGYEVEN,SPEC_ITEMID,,
+MICROBIOLOGYEVEN,SPEC_TYPE_DESC,,
+MICROBIOLOGYEVEN,ORG_ITEMID,measurement,measurement_concept_id
+MICROBIOLOGYEVEN,ORG_NAME,measurement,value_as_concept_id
+MICROBIOLOGYEVEN,ISOLATE_NUM,,
+MICROBIOLOGYEVEN,AB_ITEMID,,
+MICROBIOLOGYEVEN,AB_NAME,,
+MICROBIOLOGYEVEN,DILUTION_TEXT,,
+MICROBIOLOGYEVEN,DILUTION_COMPARISON,,
+MICROBIOLOGYEVEN,DILUTION_VALUE,MEASUREMENT,value_as_number
+MICROBIOLOGYEVEN,INTERPRETATION,,
+NOTEEVENTS,SUBJECT_ID,NOTE,person_id
+NOTEEVENTS,HADM_ID,NOTE,visit_occurrence_id
+NOTEEVENTS,CHARTDATE,NOTE,note_date
+NOTEEVENTS,CHARTTIME,NOTE,note_date
+NOTEEVENTS,STORETIME,NOTE,note_date
+NOTEEVENTS,CATEGORY,NOTE,note_class_concept_id
+NOTEEVENTS,DESCRIPTION,NOTE,note_type_concept_id
+NOTEEVENTS,CGID,NOTE,provider_id
+NOTEEVENTS,ISERROR,NOTE,is_error
+NOTEEVENTS,TEXT,NOTE,NOTE_TEXT
+OUTPUTEVENTS,SUBJECT_ID,measurement,person_id
+OUTPUTEVENTS,HADM_ID,visit_occurrence,visit_occurrence_id
+OUTPUTEVENTS,ICUSTAY_ID,visit_occurrence,visit_occurrence_id
+OUTPUTEVENTS,CHARTTIME,MEASUREMENT,measurement_datetime
+OUTPUTEVENTS,ITEMID,measurement,measurement_concept_id
+OUTPUTEVENTS,VALUE,MEASUREMENT,value_as_number
+OUTPUTEVENTS,VALUEUOM,MEASUREMENT  ,unit_concept_id
+OUTPUTEVENTS,STORETIME,measurement,measurement_datetime
+OUTPUTEVENTS,CGID,fact_relationship,fact_id_1
+OUTPUTEVENTS,STOPPED,DRUG_EXPOSURE,drug_exposure_end_date
+OUTPUTEVENTS,NEWBOTTLE,DRUG_EXPOSURE,quantity
+OUTPUTEVENTS,ISERROR,measurement,value_as_concept_id
+PATIENTS,SUBJECT_ID,person,person_id
+PATIENTS,GENDER,PERSON  ,gender_concept_id
+PATIENTS,DOB,PERSON  ,"year_of_birth, month_of_birth, day_of_birth"
+PATIENTS,DOD,PERSON,death_datetime
+PATIENTS,DOD_HOSP,DEATH,death_date
+PATIENTS,DOD_SSN,person,person_source_value
+PATIENTS,EXPIRE_FLAG,DEATH  ,death_type_concept_id
+PRESCRIPTIONS,SUBJECT_ID,DRUG_EXPOSURE,PERSON_ID
+PRESCRIPTIONS,HADM_ID,DRUG_EXPOSURE,VISIT_OCCURRENCE_ID
+PRESCRIPTIONS,ICUSTAY_ID,DRUG_EXPOSURE,VISIT_OCCURRENCE_ID
+PRESCRIPTIONS,STARTDATE,DRUG_EXPOSURE,drug_exposure_start_date
+PRESCRIPTIONS,ENDDATE,DRUG_EXPOSURE,drug_exposure_end_date
+PRESCRIPTIONS,DRUG_TYPE,DRUG_EXPOSURE,drug_type_concept_id
+PRESCRIPTIONS,DRUG,DRUG_EXPOSURE,drug_concept_id
+PRESCRIPTIONS,DRUG_NAME_POE,DRUG_EXPOSURE,drug_concept_id
+PRESCRIPTIONS,DRUG_NAME_GENERIC,DRUG_EXPOSURE,drug_concept_id
+PRESCRIPTIONS,FORMULARY_DRUG_CD,DRUG_ERA,drug_concept_id
+PRESCRIPTIONS,GSN,DRUG_EXPOSURE,drug_source_value
+PRESCRIPTIONS,NDC,DRUG_EXPOSURE,drug_source_value
+PRESCRIPTIONS,PROD_STRENGTH,DRUG_STRENGTH,amount_value
+PRESCRIPTIONS,DOSE_VAL_RX,DRUG_EXPOSURE,dose_unit_source_value
+PRESCRIPTIONS,DOSE_UNIT_RX,DRUG_EXPOSURE,dose_unit_source_value
+PRESCRIPTIONS,FORM_VAL_DISP,DRUG_EXPOSURE,quantity
+PRESCRIPTIONS,FORM_UNIT_DISP,DRUG_EXPOSURE,quantity
+PRESCRIPTIONS,ROUTE,DRUG_EXPOSURE,route_concept_id
+PROCEDUREEVENTS_MV,SUBJECT_ID,procedure_occurrence,person_id
+PROCEDUREEVENTS_MV,HADM_ID,procedure_occurrence,visit_occurrence_id
+PROCEDUREEVENTS_MV,ICUSTAY_ID,procedure_occurrence,visit_occurrence_id
+PROCEDUREEVENTS_MV,STARTTIME,PROCEDURE_OCCURRENCE,procedure_datetime
+PROCEDUREEVENTS_MV,ENDTIME,PROCEDURE_OCCURRENCE,procedure_end_datetime
+PROCEDUREEVENTS_MV,ITEMID,procedure_occurrence,procedure_concept_id
+PROCEDUREEVENTS_MV,VALUE,measurement,value_as_number
+PROCEDUREEVENTS_MV,VALUEUOM,measurement,unit_concept_id
+PROCEDUREEVENTS_MV,LOCATION,procedure_occurrence,location_id
+PROCEDUREEVENTS_MV,LOCATIONCATEGORY,procedure_occurrence,location_id
+PROCEDUREEVENTS_MV,STORETIME,PROCEDURE_OCCURRENCE,procedure_datetime
+PROCEDUREEVENTS_MV,CGID,procedure_occurrence,provider_id
+PROCEDUREEVENTS_MV,ORDERID,procedure_occurrence,procedure_occurrence_id
+PROCEDUREEVENTS_MV,LINKORDERID,procedure_occurrence,visit_occurrence_id
+PROCEDUREEVENTS_MV,ORDERCATEGORYNAME,procedure_occurrence,procedure_concept_id
+PROCEDUREEVENTS_MV,SECONDARYORDERCATEGORYNAME,procedure_occurrence,procedure_concept_id
+PROCEDUREEVENTS_MV,ORDERCATEGORYDESCRIPTION,procedure_occurrence,procedure_concept_id
+PROCEDUREEVENTS_MV,ISOPENBAG,procedure_occurrence,procedure_concept_id
+PROCEDUREEVENTS_MV,CONTINUEINNEXTDEPT,procedure_occurrence,procedure_concept_id
+PROCEDUREEVENTS_MV,CANCELREASON,procedure_occurrence,procedure_concept_id
+PROCEDUREEVENTS_MV,STATUSDESCRIPTION,procedure_occurrence,procedure_status_source_value
+PROCEDUREEVENTS_MV,COMMENTS_EDITEDBY,,
+PROCEDUREEVENTS_MV,COMMENTS_CANCELEDBY,,
+PROCEDUREEVENTS_MV,COMMENTS_DATE,NOTE,NOTE_DATE
+PROCEDURES_ICD,SUBJECT_ID,procedure_occurrence,person_id
+PROCEDURES_ICD,HADM_ID,procedure_occurrence,visit_occurrence_id
+PROCEDURES_ICD,SEQ_NUM,PROCEDURE_OCCURRENCE,procedure_occurrence_id
+PROCEDURES_ICD,ICD9_CODE,PROCEDURE_OCCURRENCE,procedure_concept_id
+SERVICES,SUBJECT_ID,,
+SERVICES,HADM_ID,VISIT_OCCURRENCE,visit_occurrence_id
+SERVICES,TRANSFERTIME,VISIT_OCCURRENCE,VISIT_END_DATETIME
+SERVICES,PREV_SERVICE,procedure_occurrence,preceding_procedure_occurrence_id
+SERVICES,CURR_SERVICE,,
+TRANSFERS,SUBJECT_ID,visit_occurrence,person_id
+TRANSFERS,HADM_ID,visit_occurrence,visit_occurrence_id
+TRANSFERS,ICUSTAY_ID,VISIT_OCCURRENCE,VISIT_OCCURRENCE_ID
+TRANSFERS,DBSOURCE,visit_occurrence,visit_source_value
+TRANSFERS,EVENTTYPE,visit_occurrence,visit_concept_id
+TRANSFERS,PREV_CAREUNIT,care_site,care_site_name
+TRANSFERS,CURR_CAREUNIT,care_site,care_site_name
+TRANSFERS,PREV_WARDID,visit_occurrence,preceding_visit_occurrence_id
+TRANSFERS,CURR_WARDID,visit_occurrence,care_site_id
+TRANSFERS,INTIME,VISIT_OCCURRENCE,visit_start_datetime
+TRANSFERS,OUTTIME,VISIT_OCCURRENCE  ,VISIT_END_DATETIME
+TRANSFERS,LOS,VISIT_OCCURRENCE,visit_duration
+Member,UNIQUE_MEMBER_IDC,person,person_id
+Member,SUBSCRIBER_MEMBER_IDC,,
+Member,CVR_MNTH_DT,observation_period,observation_period_start_date
+Member,RLNSHP_TO_SUBSCRIBER_CODE,observation,value_as_concept_id
+Member,MEMBER_DATE_OF_BIRTH,person  ,birth_datetime
+Member,MEMBER_GENDER,person  ,gender_concept_id
+Member,PRIMARY_PRODUCT_CODE,,
+Member,ENRL_FROM_DT,,
+Member,ENRL_THRU_DT,,
+Member,MEMBER_CITY,location  ,city
+Member,MEMBER_STATE,Location,state
+Member,MEMBER_ZIP,Location  ,zip5
+Member,MBR_LOC_CNTY_CD,location,county
+Member,MBR_LOC_CNTY_NM,,
+Member,COVERAGE_LEVEL_CODE,,
+Member,CUST_TYPE_DESC,,
+Member,SUBGROUP_NUMBER_BIZ,,
+Member,BENEFIT_PACKAGE_ID,,
+Member,MARITAL_STATUS_CODE,,
+Member,HMO,Observation,value_as_string
+Member,PPO,payer_plan_period,plan_type_concept_id
+Member,POS,,
+Member,CMM,,
+Member,EPO,Observation,value_as_concept_id
+Member,PHARMACY,drug_exposure,provider_id
+Member,DENTAL,,
+Member,MH,,
+Member,SA,person  ,gender_concept_id
+Member,VISION,,
+Member,OFFERING_FEATURE_CODE,,
+Member,BENEFIT_SERIES_ID,observation,value_as_string
+Member,BENEFIT_PACKAGE_RANK_NUMBERC,,
+Member,POLICY_MEMBER_IDC,person,person_id
+Member,UNIQUE_MEMBER_ID,person,person_id
+Member,SUBSCRIBER_MEMBER_ID,person,person_id
+Member,POLICY_MEMBER_ID,person,person_id
+Member,BENEFIT_PACKAGE_RANK_NUMBER,observation,value_as_number
+Member,C_CVR_MNTH,observation_period,observation_period_start_date
+Member,C_DOB,person  ,birth_datetime
+Member,C_MEMBER_AGE_2017,person,year_of_birth
+Member,DATE_ENRL_FROM,observation_period  ,observation_period_start_date
+Member,DATE_ENRL_THRU,Observation Period,observation_period_end_date
+Member,C_MEMBER_SSN,person  ,person_source_value
+Member,C_SUBSCRIBER_SSN,person,person_source_value
+Member,C_XTRCT_DT,observation_period,observation_period_start_date
+Member,ROW_SOURCE_FROM,observation_period,observation_period_start_date
+Claim,DESY_SORT_KEY,[Note],[note_id]
+Claim,CLAIM_NO,visit_occurrence,visit_occurrence_id
+Claim,PRVDR_NUM,,
+Claim,CLM_THRU_DT,visit_occurrence,visit_end_date
+Claim,NCH_NEAR_LINE_REC_IDENT_CD,,
+Claim,NCH_CLM_TYPE_CD,,
+Claim,CLAIM_QUERY_CODE,Procedure_Occurrence,procedure_source_value
+Claim,CLM_FAC_TYPE_CD,Visit_Occurrence,visit_concept_id
+Claim,CLM_SRVC_CLSFCTN_TYPE_CD,procedure_occurrence,procedure_concept_id
+Claim,CLM_FREQ_CD,visit_occurrence,visit_type_concept_id
+Claim,FI_NUM,PAYER_PLAN_PERIOD,payer_source_value
+Claim,CLM_MDCR_NON_PMT_RSN_CD,observation,value_as_string
+Claim,CLM_PMT_AMT,[cost],[paid_patient_copay]
+Claim,NCH_PRMRY_PYR_CLM_PD_AMT,cost,paid_by_primary
+Claim,NCH_PRMRY_PYR_CD,payer_plan_period,payer_source_value
+Claim,FI_CLM_ACTN_CD,,
+Claim,PRVDR_STATE_CD,location,state
+Claim,ORG_NPI_NUM,Provider,provider_npi
+Claim,AT_PHYSN_UPIN,,
+Claim,AT_PHYSN_NPI,Provider  ,provider_npi
+Claim,OP_PHYSN_UPIN,provider,provider_source_value
+Claim,OP_PHYSN_NPI,provider,provider_npi
+Claim,OT_PHYSN_UPIN,,
+Claim,OT_PHYSN_NPI,provider,provider_npi
+Claim,CLM_MCO_PD_SW,Observation,value_as_string
+Claim,PTNT_DSCHRG_STUS_CD,visit_occurrence,discharge_to_concept_id
+Claim,CLM_PPS_IND_CD,,
+Claim,CLM_TOT_CHRG_AMT,cost,total_charge
+Claim,CLM_ADMSN_DT,visit_occurrence,visit_start_date
+Claim,CLM_IP_ADMSN_TYPE_CD,Visit_Occurrence,admission_type_concept_id
+Claim,CLM_SRC_IP_ADMSN_CD,visit_occurrence,admission_source_concept_id
+Claim,NCH_PTNT_STATUS_IND_CD,condition_occurrence,condition_status_concept_id
+Claim,CLM_PASS_THRU_PER_DIEM_AMT,cost,paid_patient_copay
+Claim,NCH_BENE_IP_DDCTBL_AMT,cost,deductible_amt
+Claim,NCH_BENE_PTA_COINSRNC_LBLTY_AMT,,
+Claim,NCH_BENE_BLOOD_DDCTBL_LBLTY_AM,,
+Claim,NCH_PROFNL_CMPNT_CHRG_AMT,procedure_occurrence,procedure_cost
+Claim,NCH_IP_NCVRD_CHRG_AMT,cost,total_charge
+Claim,CLM_TOT_PPS_CPTL_AMT,Cost,total_charge
+Claim,CLM_PPS_CPTL_FSP_AMT,Cost,total_charge
+Claim,CLM_PPS_CPTL_OUTLIER_AMT,cost,total_charge
+Claim,CLM_PPS_CPTL_DSPRPRTNT_SHR_AMT,,
+Claim,CLM_PPS_CPTL_IME_AMT,,
+Claim,CLM_PPS_CPTL_EXCPTN_AMT,,
+Claim,CLM_PPS_OLD_CPTL_HLD_HRMLS_AMT,,
+Claim,CLM_PPS_CPTL_DRG_WT_NUM,DRG,drg_concept_id
+Claim,CLM_UTLZTN_DAY_CNT,visit_occurrence,visit_duration
+Claim,BENE_TOT_COINSRNC_DAYS_CNT,Observation,value_as_number
+Claim,BENE_LRD_USED_CNT,,
+Claim,CLM_NON_UTLZTN_DAYS_CNT,observation,value_as_number
+Claim,NCH_BLOOD_PNTS_FRNSHD_QTY,,
+Claim,NCH_VRFD_NCVRD_STAY_FROM_DT,visit_occurrence,visit_start_date
+Claim,NCH_VRFD_NCVRD_STAY_THRU_DT,,
+Claim,NCH_BENE_MDCR_BNFTS_EXHTD_DT_I,,
+Claim,NCH_BENE_DSCHRG_DT,visit_occurrence,discharge_date
+Claim,CLM_DRG_CD,procedure_occurrence,procedure_concept_id
+Claim,CLM_DRG_OUTLIER_STAY_CD,Visit_Occurrence,discharge_to_concept_id
+Claim,NCH_DRG_OUTLIER_APRVD_PMT_AMT,,
+Claim,ADMTG_DGNS_CD,Visit_Occurrence,admitting_source_concept_id
+Claim,ADMTG_DGNS_VRSN_CD,visit_occurrence,admitting_source_concept_id
+Claim,PRNCPAL_DGNS_CD,condition_occurrence,condition_source_value
+Claim,PRNCPAL_DGNS_VRSN_CD,condition_occurrence  ,condition_source_concept_id
+Claim,ICD_DGNS_CD1,condition_occurrence  ,condition_source_value
+Claim,ICD_DGNS_VRSN_CD1,condition_occurrence,condition_source_concept_id
+Claim,CLM_POA_IND_SW1,condition_occurrence,condition_status_source_value
+Claim,ICD_DGNS_CD2,condition_occurrence,condition_source_value
+Claim,ICD_DGNS_VRSN_CD2,condition_occurrence,condition_source_concept_id
+Claim,CLM_POA_IND_SW2,condition_occurrence,condition_status_source_value
+Claim,ICD_DGNS_CD3,condition_occurrence  ,condition_source_value
+Claim,ICD_DGNS_VRSN_CD3,condition_occurrence,condition_source_concept_id
+Claim,CLM_POA_IND_SW3,condition_occurrence,condition_status_source_value
+Inpatient Visit Claims,Z_PATID,visit_occurrence,person_id
+Inpatient Visit Claims,Z_CLMID,visit_occurrence,visit_occurrence_id
+Inpatient Visit Claims,CLMSEQ,visit_occurrence,visit_occurrence_id
+Inpatient Visit Claims,YR,visit_occurrence  ,visit_start_date
+Inpatient Visit Claims,MNTH,visit_occurrence,visit_start_date
+Inpatient Visit Claims,CLM_FRM_TYP,visit_occurrence,visit_source_value
+Inpatient Visit Claims,TOB,,
+Inpatient Visit Claims,FST_DT,visit_occurrence,visit_start_date
+Inpatient Visit Claims,LST_DT,visit_occurrence,visit_end_date
+Inpatient Visit Claims,FST_ADMTDT,visit_occurrence,visit_start_date
+Inpatient Visit Claims,LAST_DISCHDT,visit_occurrence,discharge_date
+Inpatient Visit Claims,Z_ADMIT_ID,visit_occurrence,visit_occurrence_id
+Inpatient Visit Claims,ADMIT_SRC,Visit_Occurrence,admit_source_concept_id
+Inpatient Visit Claims,ADMIT_TYPE,visit_occurrence,admit_type_concept_id
+Inpatient Visit Claims,MDC,visit_occurrence,visit_concept_id
+Inpatient Visit Claims,PAID_DT,visit_occurrence,discharge_to_concept_id
+Inpatient Visit Claims,AMT_NET_PAID,cost,paid_amount
+Inpatient Visit Claims,COINS,visit_occurrence,coinsurance_amount
+Inpatient Visit Claims,COPAY,Visit_Occurrence,cost_sharing
+Inpatient Visit Claims,DEDUCT,Cost,deductible
+Inpatient Visit Claims,CALC_ALLWD,cost,paid
+Inpatient Visit Claims,TOT_MEM_CS,,
+Inpatient Visit Claims,UNITS,measurement,value_as_number
+Inpatient Visit Claims,DIAG1,condition_occurrence,condition_source_value
+Inpatient Visit Claims,DIAG2,CONDITION_OCCURRENCE,condition_source_value
+Inpatient Visit Claims,DIAG3,condition_occurrence,condition_source_value
+Inpatient Visit Claims,ICD10_CM1-10,CONDITION_OCCURRENCE,condition_source_value
+Inpatient Visit Claims,POA1-10,condition_occurrence,condition_status_source_value
+Inpatient Visit Claims,DRG,visit_occurrence,visit_detail_concept_id
+Inpatient Visit Claims,DSTATUS,visit_occurrence,discharge_to_concept_id
+Inpatient Visit Claims,PROC_CD,procedure_occurrence,procedure_concept_id
+Inpatient Visit Claims,PROC1,procedure_occurrence,procedure_concept_id
+Inpatient Visit Claims,PROC2,procedure_occurrence,procedure_concept_id
+Inpatient Visit Claims,PROC3,,
+Inpatient Visit Claims,PROCMOD,procedure_occurrence,modifier_concept_id
+Inpatient Visit Claims,RVNU_CD,procedure_occurrence,procedure_concept_id
+Inpatient Visit Claims,POS,visit_occurrence,place_of_service_concept_id
+Inpatient Visit Claims,HNPI,visit_occurrence,provider_id
+Inpatient Visit Claims,HNPI_BE,,
+Inpatient Visit Claims,entity,,
+Inpatient Visit Claims,PROVCAT,Visit_Occurrence,care_site_id
+Inpatient Visit Claims,PROV_ZIP_5_CD,location  ,zip5
+Inpatient Visit Claims,PROV_CBSA_CD,visit_occurrence,provider_id
+Inpatient Visit Claims,PROV_STATE,location,state
+Inpatient Visit Claims,NTWRK_IND,visit_occurrence,visit_source_value
+Inpatient Visit Claims,PRIMARY_COV_IND,,
+Inpatient Visit Claims,HCCI_HL_CAT,,
+Inpatient Visit Claims,HCCI_DET_CAT,,
+Inpatient Visit Claims,OVER65_FLAG,person,year_of_birth
+Outpatient Visit Claims,Z_PATID,visit_occurrence,person_id
+Outpatient Visit Claims,Z_CLMID,visit_occurrence,visit_occurrence_id
+Outpatient Visit Claims,CLMSEQ,visit_occurrence,visit_occurrence_id
+Outpatient Visit Claims,YR,visit_occurrence,visit_start_date
+Outpatient Visit Claims,MNTH,,
+Outpatient Visit Claims,CLM_FRM_TYP,visit_occurrence,visit_source_value
+Outpatient Visit Claims,TOB,visit_occurrence,visit_concept_id
+Outpatient Visit Claims,FST_DT,visit_occurrence,visit_start_date
+Outpatient Visit Claims,LST_DT,visit_occurrence,visit_end_date
+Outpatient Visit Claims,CLM_FST_DT,visit_occurrence,visit_start_date
+Outpatient Visit Claims,Z_VISITID,visit_occurrence,visit_occurrence_id
+Outpatient Visit Claims,PAID_DT,visit_occurrence,visit_end_date
+Outpatient Visit Claims,AMT_NET_PAID,cost,paid_amount
+Outpatient Visit Claims,COINS,visit_occurrence,visit_concept_id
+Outpatient Visit Claims,COPAY,visit_occurrence,visit_cost
+Outpatient Visit Claims,DEDUCT,Cost,deductible
+Outpatient Visit Claims,CALC_ALLWD,procedure_occurrence,paid_amount
+Outpatient Visit Claims,TOT_MEM_CS,,
+Outpatient Visit Claims,UNITS,visit_occurrence,visit_concept_id
+Outpatient Visit Claims,DIAG1,condition_occurrence,condition_concept_id
+Outpatient Visit Claims,DIAG2,CONDITION_OCCURRENCE  ,condition_source_value
+Outpatient Visit Claims,DIAG3,condition_occurrence,condition_source_value
+Outpatient Visit Claims,ICD10_CM1-10,condition_occurrence,condition_concept_id
+Outpatient Visit Claims,POA1-10,condition_occurrence,condition_status_source_value
+Outpatient Visit Claims,DRG,visit_occurrence,visit_detail_concept_id
+Outpatient Visit Claims,DSTATUS,visit_occurrence,discharge_to_concept_id
+Outpatient Visit Claims,PROC_CD,procedure_occurrence,procedure_concept_id
+Outpatient Visit Claims,PROC1,procedure_occurrence,procedure_concept_id
+Outpatient Visit Claims,PROC2,procedure_occurrence,procedure_concept_id
+Outpatient Visit Claims,PROC3,procedure_occurrence,procedure_concept_id
+Outpatient Visit Claims,PROCMOD,procedure_occurrence  ,modifier_concept_id
+Outpatient Visit Claims,ICD10_PCS1-10,procedure_occurrence,procedure_concept_id
+Outpatient Visit Claims,RVNU_CD,procedure_occurrence,revenue_code
+Outpatient Visit Claims,POS,visit_occurrence,place_of_service_concept_id
+Outpatient Visit Claims,HNPI,visit_occurrence,provider_id
+Outpatient Visit Claims,HNPI_BE,,
+Outpatient Visit Claims,PROVCAT,visit_occurrence,care_site_id
+Outpatient Visit Claims,PROV_ZIP_5_CD,location,zip5
+Outpatient Visit Claims,PROV_CBSA_CD,location,location_source_value
+Outpatient Visit Claims,PROV_STATE,location,state
+Outpatient Visit Claims,NTWRK_IND,visit_occurrence,visit_source_value
+Outpatient Visit Claims,PRIMARY_COV_IND,visit_occurrence,visit_type_concept_id
+Outpatient Visit Claims,HCCI_HL_CAT,visit_occurrence,visit_concept_id
+Outpatient Visit Claims,HCCI_DET_CAT,visit_occurrence,visit_concept_id
+Outpatient Visit Claims,OVER65_FLAG,person,year_of_birth
+Pharmacy Claims,Z_PATID,drug_exposure,person_id
+Pharmacy Claims,Z_CLMID,drug_exposure,drug_exposure_id
+Pharmacy Claims,YR,drug_exposure,drug_exposure_start_date
+Pharmacy Claims,MNTH,drug_exposure,drug_exposure_start_date
+Pharmacy Claims,YRMNTH_PD,drug_exposure,drug_exposure_start_date
+Pharmacy Claims,FILL_DT,DRUG_EXPOSURE,drug_exposure_start_date
+Pharmacy Claims,CHK_DT,drug_exposure,drug_exposure_start_date
+Pharmacy Claims,AMT_NET_PAID,DRUG_EXPOSURE,paid_amount
+Pharmacy Claims,COPAY,DRUG_EXPOSURE,paid_copay
+Pharmacy Claims,COINS,Drug_Exposure,coinsurance_amount
+Pharmacy Claims,DEDUCT,Drug_Exposure,paid_patient_copay
+Pharmacy Claims,CALC_ALLWD,DRUG_COST,paid_amount
+Pharmacy Claims,TOT_MEM_CS,drug_exposure,quantity
+Pharmacy Claims,DISPFEE,Drug_Exposure,paid_dispensing_fee
+Pharmacy Claims,QUANTITY,DRUG_EXPOSURE,quantity
+Pharmacy Claims,HNPI,drug_exposure,provider_id
+Pharmacy Claims,DAW,DRUG_EXPOSURE,daw_source_value
+Pharmacy Claims,DAYS_SUP,DRUG_EXPOSURE,days_supply
+Pharmacy Claims,SCRIPTS,DRUG_EXPOSURE,drug_concept_id
+Pharmacy Claims,NDC,DRUG_EXPOSURE,drug_concept_id
+Pharmacy Claims,SPCLT_IND,drug_exposure,specialty_concept_id
+Pharmacy Claims,HCCI_HL_CAT,drug_exposure,drug_concept_id
+Pharmacy Claims,HCCI_DET_CAT,,
+Pharmacy Claims,OVER65_FLAG,person,year_of_birth
