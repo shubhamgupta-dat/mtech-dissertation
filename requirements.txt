@@ -1,10 +1,10 @@
 python-dotenv
 llama-index==0.9.47
-openai==1.14.2
+openai==1.43.0
 # faiss-cpu==1.7.4
 numpy==1.26.0
 pandas==2.1.1
-pydantic==2.7.4
+pydantic==2.8.2
 # llama-index-embeddings-azure-openai
 llama-index-llms-azure-openai
 fuzzywuzzy
