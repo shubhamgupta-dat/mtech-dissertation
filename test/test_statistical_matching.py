@@ -49,13 +49,11 @@ def test_statistical_evaluation():
 
     evaluate(n_splits, df_history)
 
-    df_results = pd.DataFrame(list_output,columns=['precision','acc_col','acc_gross','type1','type4'])
-    LOGGER.success("Evaluation Completed. Here are the results")
-    LOGGER.success(
-        df_results.mean(
-            axis=0
-        )
+    df_results = pd.DataFrame(
+        list_output, columns=["precision", "acc_col", "acc_gross", "type1", "type4"]
     )
+    LOGGER.success("Evaluation Completed. Here are the results")
+    LOGGER.success(df_results.mean(axis=0))
     LOGGER.success("Completed Evaluation for Statistical Models")
 
 
